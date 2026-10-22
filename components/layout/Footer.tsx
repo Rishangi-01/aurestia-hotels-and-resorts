@@ -165,14 +165,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright bar */}
       <div className="border-t border-[#d9cbbb]">
         <motion.div
           {...reveal(0)}
           className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-3 px-6 py-6 sm:px-10 sm:py-7 lg:flex-row lg:items-center lg:px-16 xl:px-20"
         >
           <p className="text-xs leading-6 text-[#756962] sm:text-sm">
-            © {new Date().getFullYear()} Aurestia Hotels & Resorts. All Rights Reserved.
+            © 2026 Aurestia Hotels & Resorts. All Rights Reserved.
           </p>
 
           {/* <Link
