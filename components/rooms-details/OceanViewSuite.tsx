@@ -14,41 +14,9 @@ import {
   Baby,
   ChevronLeft,
   ChevronRight,
-  BedDouble,
-  Waves,
   Maximize2,
-  ArrowUpRight,
 } from "lucide-react";
-
-const rooms = [
-  {
-    src: "/images/home/ocean-view-suite.png",
-    alt: "Luxury king bedroom overlooking the ocean",
-    label: "Bedroom",
-  },
-  {
-    src: "/images/home/about-bedroom.png",
-    alt: "Private balcony with panoramic ocean views",
-    label: "Ocean Balcony",
-  },
-  {
-    src: "/images/home/resort-terrace.png",
-    alt: "Luxury marble bathroom with freestanding bathtub",
-    label: "Bathroom",
-  },
-  {
-    src: "/images/home/about-terrace.png",
-    alt: "Elegant living area with ocean views",
-    label: "Living Area",
-  },
-];
-
-const details = [
-  { label: "BED TYPE", value: "King Bed" },
-  { label: "VIEW", value: "Ocean View" },
-  { label: "ROOM SIZE", value: "55 M²" },
-  { label: "OCCUPANCY", value: "2 Adults + 1 Children" },
-];
+import { oceanViewSuiteContent } from "@/data";
 
 export default function OceanViewSuite() {
   const [activeImage, setActiveImage] = useState(0);
@@ -62,13 +30,13 @@ export default function OceanViewSuite() {
   const changeImage = (direction: number) => {
     setActiveImage(
       (current) =>
-        (current + direction + rooms.length) % rooms.length
+        (current + direction + oceanViewSuiteContent.gallery.length) % oceanViewSuiteContent.gallery.length
     );
   };
 
   return (
     <section
-      id="ocean-suite"
+      id={oceanViewSuiteContent.id}
       className="relative overflow-hidden bg-[#faf8f4] px-4 py-10 text-[#211914] sm:px-6 sm:py-14 lg:px-10 lg:pt-20 lg:pb-8"
     >
       {/* Subtle background decoration */}
@@ -87,12 +55,12 @@ export default function OceanViewSuite() {
             <button
               type="button"
               onClick={() => setLightboxOpen(true)}
-              aria-label="Open large room image"
+              aria-label={oceanViewSuiteContent.openImageLabel}
               className="relative block aspect-[1.5/1] w-full overflow-hidden rounded-[3px] bg-[#e8dfd3] text-left"
             >
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={rooms[activeImage].src}
+                  key={oceanViewSuiteContent.gallery[activeImage].src}
                   initial={
                     reduceMotion
                       ? false
@@ -104,8 +72,8 @@ export default function OceanViewSuite() {
                   className="absolute inset-0"
                 >
                   <Image
-                    src={rooms[activeImage].src}
-                    alt={rooms[activeImage].alt}
+                    src={oceanViewSuiteContent.gallery[activeImage].src}
+                    alt={oceanViewSuiteContent.gallery[activeImage].alt}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 60vw"
@@ -118,11 +86,11 @@ export default function OceanViewSuite() {
 
               <span className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full border border-white/40 bg-black/20 px-4 py-2 text-xs tracking-[0.15em] text-white backdrop-blur-md">
                 <Maximize2 size={14} />
-                VIEW GALLERY
+                {oceanViewSuiteContent.galleryLabel}
               </span>
 
               <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-2 text-xs tracking-wider text-[#3a2b20]">
-                {String(activeImage + 1).padStart(2, "0")} / 04
+                {String(activeImage + 1).padStart(2, "0")} / {String(oceanViewSuiteContent.galleryCount).padStart(2, "0")}
               </span>
             </button>
           </motion.div>
@@ -139,21 +107,17 @@ export default function OceanViewSuite() {
           >
             <div className="mb-4 flex items-center gap-4">
               <span className="text-xs font-medium tracking-[0.22em] text-[#bd854b] sm:text-sm">
-                ROOMS &amp; SUITES
+                {oceanViewSuiteContent.eyebrow}
               </span>
               <span className="h-px w-12 bg-[#c99860]" />
             </div>
 
             <h1 className="font-serif text-[clamp(2.5rem,4.5vw,4.4rem)] leading-[1.04] tracking-[-0.045em]">
-              Ocean View Suite
+              {oceanViewSuiteContent.title}
             </h1>
 
             <p className="mt-6 text-[14px] leading-[1.95] text-[#77716c] sm:text-[15px]">
-              Experience the perfect blend of luxury and tranquility
-              in our Ocean View Suite. Designed for comfort and
-              relaxation, this spacious suite offers breathtaking
-              sea views, elegant interiors, and modern amenities
-              for a truly memorable stay.
+              {oceanViewSuiteContent.description}
             </p>
 
             {/* Feature highlights */}
@@ -161,31 +125,31 @@ export default function OceanViewSuite() {
               <div className="flex items-center gap-2 sm:gap-3">
                 <House className="shrink-0 text-[#bd854b]" size={24} strokeWidth={1.7} />
                 <div>
-                  <p className="text-sm font-medium sm:text-base">55 M²</p>
-                  <p className="mt-1 text-[10px] text-[#93877b] sm:text-xs">Room size</p>
+                  <p className="text-sm font-medium sm:text-base">{oceanViewSuiteContent.roomSize}</p>
+                  <p className="mt-1 text-[10px] text-[#93877b] sm:text-xs">{oceanViewSuiteContent.roomSizeLabel}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-center gap-2 border-x border-[#e3d6c6] px-2 sm:gap-3">
                 <UserRound className="shrink-0 text-[#bd854b]" size={24} strokeWidth={1.7} />
                 <div>
-                  <p className="text-xs font-medium sm:text-base">2 ADULTS</p>
-                  <p className="mt-1 text-[10px] text-[#93877b] sm:text-xs">Capacity</p>
+                  <p className="text-xs font-medium sm:text-base">{oceanViewSuiteContent.capacity}</p>
+                  <p className="mt-1 text-[10px] text-[#93877b] sm:text-xs">{oceanViewSuiteContent.capacityLabel}</p>
                 </div>
               </div>
 
               <div className="flex items-center justify-end gap-2 pl-2 sm:gap-3">
                 <Baby className="shrink-0 text-[#bd854b]" size={24} strokeWidth={1.7} />
                 <div>
-                  <p className="text-xs font-medium sm:text-base">1 CHILD</p>
-                  <p className="mt-1 text-[10px] text-[#93877b] sm:text-xs">Extra guest</p>
+                  <p className="text-xs font-medium sm:text-base">{oceanViewSuiteContent.extraGuest}</p>
+                  <p className="mt-1 text-[10px] text-[#93877b] sm:text-xs">{oceanViewSuiteContent.extraGuestLabel}</p>
                 </div>
               </div>
             </div>
 
             {/* Room details */}
             <div className="space-y-0 border-b-2 border-[#e5d4bf] py-4">
-              {details.map((detail, index) => (
+              {oceanViewSuiteContent.details.map((detail, index) => (
                 <motion.div
                   key={detail.label}
                   initial={reduceMotion ? false : { opacity: 0, x: 12 }}
@@ -210,7 +174,7 @@ export default function OceanViewSuite() {
 
         {/* Thumbnail gallery */}
         <motion.div
-          id="room-gallery"
+          id={oceanViewSuiteContent.galleryId}
           initial={reduceMotion ? false : { opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -221,14 +185,14 @@ export default function OceanViewSuite() {
         >
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            {rooms.map((room, index) => (
+            {oceanViewSuiteContent.gallery.map((room, index) => (
               <motion.button
                 key={room.src}
                 type="button"
                 onClick={() => setActiveImage(index)}
                 whileHover={reduceMotion ? undefined : { y: -4 }}
                 whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                aria-label={`View ${room.label}`}
+                aria-label={`${oceanViewSuiteContent.thumbnailLabelPrefix} ${room.label}`}
                 aria-pressed={activeImage === index}
                 className={`group relative aspect-[1.35/1] overflow-hidden rounded-[2px] bg-[#e8dfd3] ${
                   activeImage === index
@@ -246,9 +210,9 @@ export default function OceanViewSuite() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-70 transition-opacity group-hover:opacity-100" />
 
-                <span className="absolute bottom-3 left-3 text-left text-xs tracking-wider text-white sm:bottom-4 sm:left-4 sm:text-sm">
+                {/* <span className="absolute bottom-3 left-3 text-left text-xs tracking-wider text-white sm:bottom-4 sm:left-4 sm:text-sm">
                   {room.label}
-                </span>
+                </span> */}
               </motion.button>
             ))}
           </div>
@@ -266,7 +230,7 @@ export default function OceanViewSuite() {
             onClick={() => setLightboxOpen(false)}
             role="dialog"
             aria-modal="true"
-            aria-label="Room image viewer"
+            aria-label={oceanViewSuiteContent.viewerLabel}
           >
             <button
               type="button"
@@ -274,7 +238,7 @@ export default function OceanViewSuite() {
                 event.stopPropagation();
                 setLightboxOpen(false);
               }}
-              aria-label="Close gallery"
+              aria-label={oceanViewSuiteContent.closeGalleryLabel}
               className="absolute right-5 top-5 z-10 text-3xl text-white hover:text-[#d4ad7e]"
             >
               ×
@@ -286,22 +250,22 @@ export default function OceanViewSuite() {
                 event.stopPropagation();
                 changeImage(-1);
               }}
-              aria-label="Previous image"
+              aria-label={oceanViewSuiteContent.previousImageLabel}
               className="absolute left-3 z-10 rounded-full border border-white/30 p-2 text-white transition hover:bg-white/10 sm:left-8"
             >
               <ChevronLeft size={24} />
             </button>
 
             <motion.div
-              key={rooms[activeImage].src}
+              key={oceanViewSuiteContent.gallery[activeImage].src}
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               className="relative h-[55vh] w-full max-w-6xl"
               onClick={(event) => event.stopPropagation()}
             >
               <Image
-                src={rooms[activeImage].src}
-                alt={rooms[activeImage].alt}
+                src={oceanViewSuiteContent.gallery[activeImage].src}
+                alt={oceanViewSuiteContent.gallery[activeImage].alt}
                 fill
                 sizes="95vw"
                 className="object-contain"
@@ -314,14 +278,14 @@ export default function OceanViewSuite() {
                 event.stopPropagation();
                 changeImage(1);
               }}
-              aria-label="Next image"
+              aria-label={oceanViewSuiteContent.nextImageLabel}
               className="absolute right-3 z-10 rounded-full border border-white/30 p-2 text-white transition hover:bg-white/10 sm:right-8"
             >
               <ChevronRight size={24} />
             </button>
 
             <p className="absolute bottom-4 text-sm tracking-widest text-white/80">
-              {rooms[activeImage].label} · {activeImage + 1} / {rooms.length}
+              {oceanViewSuiteContent.gallery[activeImage].label} · {activeImage + 1} / {oceanViewSuiteContent.gallery.length}
             </p>
           </motion.div>
         )}

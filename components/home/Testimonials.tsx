@@ -4,46 +4,20 @@
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-
-type Testimonial = {
-  quote: string;
-  name: string;
-  role: string;
-};
-
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      "Our stay at Aurestia was absolutely exceptional. The ambiance, hospitality, and attention to detail made it a truly memorable experience. We can't wait to return.",
-    name: "Ritika Sharma",
-    role: "LEISURE TRAVELLER",
-  },
-  {
-    quote:
-      "From the beautiful surroundings to the thoughtful service, every moment felt special. Aurestia is the perfect place to relax, unwind, and create beautiful memories.",
-    name: "Aarav Mehta",
-    role: "FREQUENT TRAVELLER",
-  },
-  {
-    quote:
-      "An extraordinary escape with beautiful interiors, peaceful views, and genuinely warm hospitality. Every detail made our visit feel effortless and unforgettable.",
-    name: "Ananya Kapoor",
-    role: "LUXURY TRAVELLER",
-  },
-];
+import { testimonialsContent } from "@/data";
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(testimonialsContent.initialIndex);
   const [isPaused, setIsPaused] = useState(false);
   const reduceMotion = useReducedMotion();
 
   const next = useCallback(() => {
-    setActiveIndex((current) => (current + 1) % testimonials.length);
+    setActiveIndex((current) => (current + 1) % testimonialsContent.items.length);
   }, []);
 
   const previous = useCallback(() => {
     setActiveIndex(
-      (current) => (current - 1 + testimonials.length) % testimonials.length
+      (current) => (current - 1 + testimonialsContent.items.length) % testimonialsContent.items.length
     );
   }, []);
 
@@ -59,12 +33,12 @@ export default function Testimonials() {
     return () => window.clearInterval(timer);
   }, [isPaused, reduceMotion, next]);
 
-  const active = testimonials[activeIndex];
+  const active = testimonialsContent.items[activeIndex];
 
   return (
     <section
-      id="testimonials"
-      aria-label="Guest testimonials"
+      id={testimonialsContent.id}
+      aria-label={testimonialsContent.sectionLabel}
       className="relative overflow-hidden bg-[#faf7f1] px-5 py-8 sm:px-10 sm:py-8 lg:min-h-[570px] lg:px-16 lg:py-12 w-[100%]"
     >
       <div
@@ -98,14 +72,14 @@ export default function Testimonials() {
             <span className="h-px w-10 bg-[#b78342] sm:w-11" />
 
             <p className="text-[10px] font-medium tracking-[0.28em] text-[#49352a] sm:text-xs sm:tracking-[0.32em]">
-              VOICE FROM OUR GUESTS
+              {testimonialsContent.eyebrow}
             </p>
 
             <span className="h-px w-10 bg-[#b78342] sm:w-11" />
           </div>
 
           <h2 className="mt-3 font-serif text-[clamp(2.8rem,5.5vw,4.8rem)] leading-tight tracking-[-0.045em] text-[#2e1912]">
-            Testi<span className="text-[#b78342]">monials</span>
+            {testimonialsContent.headingFirst}<span className="text-[#b78342]">{testimonialsContent.headingAccent}</span>
           </h2>
         </motion.div>
 
@@ -118,7 +92,7 @@ export default function Testimonials() {
           aria-hidden="true"
         >
           <span className="h-[52px] font-serif text-[85px] font-bold leading-[0.9] text-[#b78342]">
-            “
+            {testimonialsContent.quoteMark}
           </span>
           <span className="mt-2 h-5 w-px bg-[#b78342]" />
         </motion.div>
@@ -127,7 +101,7 @@ export default function Testimonials() {
           <button
             type="button"
             onClick={previous}
-            aria-label="Previous testimonial"
+            aria-label={testimonialsContent.previousLabel}
             className="absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center text-[#b78342] transition-transform duration-300 hover:-translate-x-1 sm:h-12 sm:w-12"
           >
             <FiArrowLeft size={27} strokeWidth={1.4} />
@@ -155,7 +129,7 @@ export default function Testimonials() {
                 transition={{ duration: reduceMotion ? 0 : 0.45 }}
               >
                 <blockquote className="font-serif text-[clamp(1.25rem,2.5vw,2rem)] leading-[1.55] tracking-[-0.018em] text-[#3d241b]">
-                  “{active.quote}”
+                  {testimonialsContent.quoteMark}{active.quote}{testimonialsContent.quoteMark}
                 </blockquote>
 
                 <div className="mx-auto mt-6 h-px w-12 bg-[#b78342]" />
@@ -174,7 +148,7 @@ export default function Testimonials() {
           <button
             type="button"
             onClick={next}
-            aria-label="Next testimonial"
+            aria-label={testimonialsContent.nextLabel}
             className="absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center text-[#b78342] transition-transform duration-300 hover:translate-x-1 sm:h-12 sm:w-12"
           >
             <FiArrowRight size={27} strokeWidth={1.4} />
@@ -183,14 +157,14 @@ export default function Testimonials() {
 
         <div
           className="mt-10 flex items-center justify-center gap-6"
-          aria-label="Choose a testimonial"
+          aria-label={testimonialsContent.chooseLabel}
         >
-          {testimonials.map((testimonial, index) => (
+          {testimonialsContent.items.map((testimonial, index) => (
             <button
               key={testimonial.name}
               type="button"
               onClick={() => goTo(index)}
-              aria-label={`Show testimonial ${index + 1}`}
+              aria-label={`${testimonialsContent.showLabelPrefix} ${index + 1}`}
               aria-current={activeIndex === index ? "step" : undefined}
               className={`h-[15px] w-[15px] rounded-full border transition-all duration-300 ${
                 activeIndex === index

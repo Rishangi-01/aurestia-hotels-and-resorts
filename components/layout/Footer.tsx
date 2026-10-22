@@ -10,18 +10,7 @@ import {
   FiMapPin,
   FiPhone,
 } from "react-icons/fi";
-
-const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Rooms & Suites", href: "#rooms" },
-  { label: "Dining", href: "#dining" },
-  { label: "Spa & Wellness", href: "#spa" },
-  { label: "Facilities", href: "#facilities" },
-  { label: "Contact Us", href: "#contact" },
-];
-
-const gold = "#BD873F";
+import { footerContent } from "@/data";
 
 export default function Footer() {
   const reduceMotion = useReducedMotion();
@@ -54,13 +43,13 @@ export default function Footer() {
             className="flex min-h-[200px] items-center justify-center md:col-span-2 lg:col-span-1 lg:justify-start lg:pr-10"
           >
             <Link
-              href="#home"
-              aria-label="Aurestia Hotels and Resorts - Home"
+              href={footerContent.logo.href}
+              aria-label={footerContent.logo.ariaLabel}
               className="group inline-block w-full max-w-[440px]"
             >
               <Image
-                src="/images/logo.png"
-                alt="Aurestia Hotels & Resorts"
+                src={footerContent.logo.src}
+                alt={footerContent.logo.alt}
                 width={650}
                 height={180}
                 priority={false}
@@ -75,14 +64,14 @@ export default function Footer() {
             className="border-t border-[#e9d7bd] pt-8 md:border-l md:pl-10 md:pt-0 lg:min-h-[330px] lg:border-l lg:border-t-0 lg:pl-16 lg:pr-10"
           >
             <h2 className="font-serif text-3xl tracking-[-0.035em] text-[#291710] sm:text-[34px]">
-              Quick Links
+              {footerContent.quickLinksHeading}
             </h2>
 
             <div className="mt-5 h-[3px] w-[50px] bg-[#bd873f]" />
 
-            <nav aria-label="Footer navigation" className="mt-7">
+            <nav aria-label={footerContent.quickLinksAriaLabel} className="mt-7">
               <ul className="space-y-3">
-                {quickLinks.map((link) => (
+                {footerContent.quickLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
@@ -106,7 +95,7 @@ export default function Footer() {
             className="border-t border-[#e9d7bd] pt-8 md:col-span-2 md:border-t lg:col-span-1 lg:min-h-[330px] lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0 xl:pl-16"
           >
             <h2 className="font-serif text-3xl tracking-[-0.035em] text-[#291710] sm:text-[34px]">
-              Get In Touch
+              {footerContent.contactHeading}
             </h2>
 
             <div className="mt-5 h-[3px] w-[50px] bg-[#bd873f]" />
@@ -117,11 +106,12 @@ export default function Footer() {
                 size={19}
               />
               <p className="text-[15px] leading-7 text-[#6d625c] sm:text-[17px] sm:leading-[1.8]">
-                Aurestia Hotels & Resorts
-                <br />
-                Beachfront Avenue, Kalpitiya,
-                <br />
-                Sri Lanka 61360
+                {footerContent.contact.addressLines.map((line, index) => (
+                  <span key={line}>
+                    {line}
+                    {index < footerContent.contact.addressLines.length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </address>
 
@@ -131,33 +121,33 @@ export default function Footer() {
               {/* Phone */}
               <div>
                 <p className="text-xs font-semibold tracking-[0.25em] text-[#b78342] sm:text-sm">
-                  PHONE
+                  {footerContent.contact.phoneLabel}
                 </p>
 
                 <a
-                  href="tel:+94771234567"
+                  href={footerContent.contact.phoneHref}
                   className="mt-2 inline-flex items-center gap-2 text-[16px] text-[#6d625c] transition-colors hover:text-[#a87330] sm:text-[18px]"
                 >
                   <FiPhone size={16} className="text-[#bd873f]" />
-                  +94 77 123 4567
+                  {footerContent.contact.phone}
                 </a>
               </div>
 
               {/* Email */}
               <div>
                 <p className="text-xs font-semibold tracking-[0.25em] text-[#b78342] sm:text-sm">
-                  EMAIL
+                  {footerContent.contact.emailLabel}
                 </p>
 
                 <a
-                  href="mailto:hello@aurestiaresorts.com"
+                  href={footerContent.contact.emailHref}
                   className="mt-2 inline-flex items-center gap-2 break-all text-[15px] text-[#6d625c] transition-colors hover:text-[#a87330] sm:text-[17px]"
                 >
                   <FiMail
                     size={17}
                     className="shrink-0 text-[#bd873f]"
                   />
-                  hello@aurestiaresorts.com
+                  {footerContent.contact.email}
                 </a>
               </div>
             </div>
@@ -171,18 +161,9 @@ export default function Footer() {
           className="mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-3 px-6 py-6 sm:px-10 sm:py-7 lg:flex-row lg:items-center lg:px-16 xl:px-20"
         >
           <p className="text-xs leading-6 text-[#756962] sm:text-sm">
-            © 2026 Aurestia Hotels & Resorts. All Rights Reserved.
+            {footerContent.copyright}
           </p>
 
-          {/* <Link
-            href="#home"
-            className="group inline-flex items-center gap-2 text-xs tracking-[0.12em] text-[#8d6b43] transition-colors hover:text-[#42271a]"
-          >
-            BACK TO TOP
-            <span className="transition-transform duration-300 group-hover:-translate-y-1">
-              ↑
-            </span>
-          </Link> */}
         </motion.div>
       </div>
     </footer>

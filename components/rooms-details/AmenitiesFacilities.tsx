@@ -6,41 +6,38 @@ import {
   FiWifi,
   FiMonitor,
   FiWind,
-  FiCoffee,
   FiShield,
-  FiDroplet,
   FiCoffee as FiCup,
-  FiGrid,
-  FiKey,
   FiPackage,
 } from "react-icons/fi";
 import {
   LuBath,
-  LuLampDesk,
   LuRefrigerator,
   LuShirt,
   LuDoorOpen,
 } from "react-icons/lu";
+import type { IconType } from "react-icons";
+import { amenitiesFacilitiesContent } from "@/data";
 
-const amenities = [
-  { name: "Free Wi-Fi", icon: FiWifi },
-  { name: "Smart TV", icon: FiMonitor },
-  { name: "Air Conditioning", icon: FiWind },
-  { name: "Luxury Bathroom", icon: LuBath },
-  { name: "Private Balcony", icon: LuDoorOpen },
-  { name: "Mini Bar", icon: LuRefrigerator },
-  { name: "Tea/Coffee Maker", icon: FiCup },
-  { name: "In-Room Safe", icon: FiShield },
-  { name: "Bathrobes", icon: LuShirt },
-  { name: "Premium Toiletries", icon: FiPackage },
-];
+const amenityIcons: Record<string, IconType> = {
+  wifi: FiWifi,
+  monitor: FiMonitor,
+  wind: FiWind,
+  bath: LuBath,
+  door: LuDoorOpen,
+  refrigerator: LuRefrigerator,
+  coffee: FiCup,
+  shield: FiShield,
+  shirt: LuShirt,
+  package: FiPackage,
+};
 
 export default function AmenitiesFacilities() {
   const reduceMotion = useReducedMotion();
 
   return (
     <section
-      id="amenities"
+      id={amenitiesFacilitiesContent.id}
       className="overflow-hidden bg-[#fbf5ed] px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-12"
     >
       <div className="mx-auto max-w-[1600px]">
@@ -57,21 +54,21 @@ export default function AmenitiesFacilities() {
         >
           <div className="mb-4 flex items-center gap-4">
             <span className="text-xs font-medium tracking-[0.22em] text-[#b78342] sm:text-sm sm:tracking-[0.25em]">
-              ROOM FEATURES
+              {amenitiesFacilitiesContent.eyebrow}
             </span>
 
             <span className="h-px w-12 bg-[#c69a60] sm:w-16" />
           </div>
 
           <h2 className="font-serif text-3xl leading-tight tracking-[-0.035em] text-[#291810] sm:text-4xl md:text-5xl lg:text-[58px]">
-            Amenities &amp; Facilities
+            {amenitiesFacilitiesContent.heading}
           </h2>
         </motion.div>
 
         {/* Amenities grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
-          {amenities.map((amenity, index) => {
-            const Icon = amenity.icon;
+          {amenitiesFacilitiesContent.items.map((amenity, index) => {
+            const Icon = amenityIcons[amenity.icon];
 
             return (
               <motion.div

@@ -5,50 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import { roomsSuitesContent } from "@/data";
 
-type Room = {
-  name: string;
-  image: string;
-  area: string;
-  adults: number;
-  children: number;
-  href: string;
-};
-
-const rooms: Room[] = [
-  {
-    name: "Ocean View Suite",
-    image: "/images/home/deluxe-room.png",
-    area: "55 M²",
-    adults: 2,
-    children: 1,
-    href: "/rooms/rooms-details-suite",
-  },
-  {
-    name: "Deluxe Room",
-    image: "/images/home/about-terrace.png",
-    area: "38 M²",
-    adults: 2,
-    children: 1,
-    href: "/rooms/rooms-details",
-  },
-  {
-    name: "Ocean View Suite",
-    image: "/images/home/about-bedroom.png",
-    area: "55 M²",
-    adults: 2,
-    children: 1,
-    href: "/rooms/rooms-details-suite",
-  },
-  {
-    name: "Deluxe Room",
-    image: "/images/home/ocean-view-suite.png",
-    area: "38 M²",
-    adults: 2,
-    children: 1,
-    href: "/rooms/rooms-details",
-  },
-];
+type Room = (typeof roomsSuitesContent.items)[number];
 
 function RoomCard({
   room,
@@ -77,7 +36,7 @@ function RoomCard({
       {/* Room image */}
       <Link
         href={room.href}
-        aria-label={`View ${room.name}`}
+        aria-label={`${roomsSuitesContent.viewRoomLabelPrefix} ${room.name}`}
         className="relative block aspect-[1.55/1] overflow-hidden bg-[#eee7dc]"
       >
         <Image
@@ -108,11 +67,11 @@ function RoomCard({
 
             <span className="h-3 w-px bg-[#c6924d]" />
 
-            <span>{room.adults} ADULTS</span>
+            <span>{room.adults} {roomsSuitesContent.adultsLabel}</span>
 
             <span className="h-3 w-px bg-[#c6924d]" />
 
-            <span>{room.children} CHILDREN</span>
+            <span>{room.children} {roomsSuitesContent.childrenLabel}</span>
           </div>
         </div>
 
@@ -124,7 +83,7 @@ function RoomCard({
         >
           <Link
             href={room.href}
-            aria-label={`Explore ${room.name}`}
+            aria-label={`${roomsSuitesContent.exploreRoomLabelPrefix} ${room.name}`}
             className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#c58a43] text-[#b77d36] transition-colors duration-300 hover:bg-[#b77d36] hover:text-white sm:h-10 sm:w-10 xl:h-12 xl:w-12"
           >
             <FiArrowRight size={20} />
@@ -140,7 +99,7 @@ export default function RoomsSuites() {
 
   return (
     <section
-      id="rooms"
+      id={roomsSuitesContent.id}
       className="overflow-hidden bg-[#fcfaf6] px-4 py-14 sm:px-7 sm:py-16 lg:px-12 lg:py-20"
     >
       <div className="mx-auto max-w-[1440px]">
@@ -154,21 +113,21 @@ export default function RoomsSuites() {
         >
           <div className="mb-2 flex items-center gap-3">
             <span className="text-[10px] font-medium tracking-[0.28em] text-[#b78342]">
-              EXPLORE
+              {roomsSuitesContent.eyebrow}
             </span>
 
             <span className="h-px w-10 bg-[#c18b42]" />
           </div>
 
           <h2 className="font-serif text-4xl leading-tight tracking-[-0.045em] text-[#28150f] sm:text-5xl md:text-6xl">
-            Rooms &amp;{" "}
-            <span className="text-[#b9803b]">Suites</span>
+            {roomsSuitesContent.headingFirst}{" "}
+            <span className="text-[#b9803b]">{roomsSuitesContent.headingAccent}</span>
           </h2>
         </motion.div>
 
         {/* Room cards */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-5 lg:gap-7">
-          {rooms.map((room, index) => (
+          {roomsSuitesContent.items.map((room, index) => (
             <RoomCard
               key={`${room.name}-${index}`}
               room={room}

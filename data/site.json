@@ -1,0 +1,377 @@
+{
+  "navbar": {
+    "logo": {
+      "src": "/images/logo.png",
+      "alt": "Aurestia Hotels and Resorts",
+      "href": "/",
+      "ariaLabel": "Aurestia Hotels and Resorts home"
+    },
+    "navLinks": [
+      { "name": "HOME", "href": "/" },
+      { "name": "ABOUT US", "href": "/about" },
+      { "name": "ROOMS & SUITS", "href": "/rooms" },
+      { "name": "GALLERY", "href": "/gallery" },
+      { "name": "TESTIMONIALS", "href": "/testimonials" },
+      { "name": "CONTACT US", "href": "/contact" }
+    ],
+    "enquireCta": {
+      "label": "ENQUIRE NOW",
+      "href": "#contact"
+    },
+    "menu": {
+      "openLabel": "Open menu",
+      "closeLabel": "Close menu"
+    }
+  },
+  "footer": {
+    "logo": {
+      "src": "/images/logo.png",
+      "alt": "Aurestia Hotels & Resorts",
+      "href": "/",
+      "ariaLabel": "Aurestia Hotels and Resorts - Home"
+    },
+    "quickLinksHeading": "Quick Links",
+    "quickLinksAriaLabel": "Footer navigation",
+    "quickLinks": [
+      { "label": "Home", "href": "/" },
+      { "label": "About Us", "href": "/about" },
+      { "label": "Rooms & Suites", "href": "/rooms" },
+      { "label": "Dining", "href": "#dining" },
+      { "label": "Spa & Wellness", "href": "#spa" },
+      { "label": "Facilities", "href": "#facilities" },
+      { "label": "Contact Us", "href": "#contact" }
+    ],
+    "contactHeading": "Get In Touch",
+    "contact": {
+      "addressLines": [
+        "Aurestia Hotels & Resorts",
+        "Beachfront Avenue, Kalpitiya,",
+        "Sri Lanka 61360"
+      ],
+      "phoneLabel": "PHONE",
+      "phoneHref": "tel:+94771234567",
+      "phone": "+94 77 123 4567",
+      "emailLabel": "EMAIL",
+      "emailHref": "mailto:hello@aurestiaresorts.com",
+      "email": "hello@aurestiaresorts.com"
+    },
+    "copyright": "© 2026 Aurestia Hotels & Resorts. All Rights Reserved."
+  },
+  "aboutUs": {
+    "id": "about",
+    "eyebrow": "ABOUT US",
+    "headingLines": ["Where Luxury", "Feels Like Home"],
+    "description": "At Aurestia Hotels & Resorts, we believe true luxury lies in meaningful experiences, thoughtful details and the perfect harmony between nature and comfort. Our properties are designed to offer serene escapes, personalized hospitality and unforgettable moments for every guest.",
+    "features": [
+      {
+        "title": "Exceptional Stays",
+        "description": "Elegantly designed rooms and suites for ultimate comfort.",
+        "icon": "bed"
+      },
+      {
+        "title": "Personalized Experiences",
+        "description": "Curated stays, gourmet dining and warm hospitality at every step.",
+        "icon": "diamond"
+      }
+    ],
+    "cta": {
+      "label": "DISCOVER OUR STAYS",
+      "href": "/rooms"
+    },
+    "images": [
+      {
+        "src": "/images/home/about-pool.png",
+        "alt": "Luxury infinity pool overlooking a Mediterranean coastline"
+      },
+      {
+        "src": "/images/home/about-terrace.png",
+        "alt": "Private resort terrace with elegant outdoor seating and sea views"
+      },
+      {
+        "src": "/images/home/about-bedroom.png",
+        "alt": "Elegant hotel bedroom with warm lighting and a panoramic sea view"
+      }
+    ]
+  },
+  "facilities": {
+    "id": "facilities",
+    "eyebrow": "Indulge",
+    "headingPrefix": "Our",
+    "headingAccent": "Facilities",
+    "tabListLabel": "Hotel facilities",
+    "defaultActiveIndex": 2,
+    "items": [
+      {
+        "id": "pool",
+        "tab": "Infinity Pool",
+        "title": "Infinity Pool",
+        "description": "Immerse yourself in tranquil waters and breathtaking ocean views. Experience unforgettable sunsets in our luxurious infinity pool.",
+        "image": "/images/home/facilities-pool.png",
+        "imageAlt": "Luxury infinity pool overlooking the ocean at sunset",
+        "badge": "RELAX & UNWIND"
+      },
+      {
+        "id": "spa",
+        "tab": "Spa & Wellness",
+        "title": "Spa & Wellness",
+        "description": "Restore your mind and body with rejuvenating treatments, calming surroundings and thoughtfully curated wellness experiences.",
+        "image": "/images/home/facilities-spa.png",
+        "imageAlt": "Peaceful luxury spa and wellness retreat",
+        "badge": "RENEW YOURSELF"
+      },
+      {
+        "id": "fitness",
+        "tab": "Fitness Center",
+        "title": "Fitness Center",
+        "description": "Stay active during your vacation in our state-of-the-art gym equipped with the latest machines.",
+        "image": "/images/home/about-pool.png",
+        "imageAlt": "Modern luxury hotel gym with premium fitness equipment",
+        "badge": "STAY ACTIVE"
+      }
+    ]
+  },
+  "roomsHero": {
+    "id": "rooms",
+    "ariaLabel": "Explore our rooms and suites",
+    "eyebrow": "EXPLORE",
+    "headingFirst": "Rooms &",
+    "headingSecond": "Suites",
+    "viewAllLabel": "VIEW ALL ROOMS",
+    "viewAllHref": "/rooms",
+    "exploreRoomLabelPrefix": "Explore",
+    "slideLabelPrefix": "Go to room slide",
+    "previousLabel": "Previous rooms",
+    "nextLabel": "Next rooms",
+    "adultsLabel": "ADULTS",
+    "adultLabel": "ADULT",
+    "childrenLabel": "CHILDREN",
+    "childLabel": "CHILD",
+    "rooms": [
+      {
+        "id": 1,
+        "name": "Ocean View Suite",
+        "image": "/images/home/ocean-view-suite.png",
+        "area": "55 M²",
+        "adults": 2,
+        "children": 1,
+        "description": "An elegant suite with panoramic ocean views."
+      },
+      {
+        "id": 2,
+        "name": "Deluxe Room",
+        "image": "/images/home/deluxe-room.png",
+        "area": "38 M²",
+        "adults": 2,
+        "children": 1,
+        "description": "Refined comfort with contemporary luxury."
+      },
+      {
+        "id": 3,
+        "name": "Presidential Suite",
+        "image": "/images/home/about-bedroom.png",
+        "area": "85 M²",
+        "adults": 3,
+        "children": 2,
+        "description": "A spacious retreat designed for exceptional stays."
+      },
+      {
+        "id": 4,
+        "name": "Garden View Room",
+        "image": "/images/home/about-terrace.png",
+        "area": "42 M²",
+        "adults": 2,
+        "children": 1,
+        "description": "Relax in a tranquil room surrounded by nature."
+      },
+      {
+        "id": 5,
+        "name": "Premium Suite",
+        "image": "/images/home/deluxe-room.png",
+        "area": "68 M²",
+        "adults": 2,
+        "children": 2,
+        "description": "A sophisticated sanctuary with premium amenities."
+      }
+    ]
+  },
+  "stayBeyond": {
+    "id": "about",
+    "headingFirst": "A Stay",
+    "headingSecond": "Beyond Ordinary",
+    "description": "Discover serene escapes, luxurious stays and unforgettable experiences in the heart of nature.",
+    "images": [
+      {
+        "src": "/images/home/resort-terrace.png",
+        "alt": "Luxury resort terrace overlooking the sea"
+      },
+      {
+        "src": "/images/home/resort-pool.png",
+        "alt": "Infinity pool at a luxury seaside resort"
+      },
+      {
+        "src": "/images/home/resort-arch.png",
+        "alt": "Elegant stone archway at a Mediterranean resort"
+      }
+    ]
+  },
+  "testimonials": {
+    "id": "testimonials",
+    "sectionLabel": "Guest testimonials",
+    "eyebrow": "VOICE FROM OUR GUESTS",
+    "headingFirst": "Testi",
+    "headingAccent": "monials",
+    "quoteMark": "“",
+    "previousLabel": "Previous testimonial",
+    "nextLabel": "Next testimonial",
+    "chooseLabel": "Choose a testimonial",
+    "showLabelPrefix": "Show testimonial",
+    "initialIndex": 1,
+    "items": [
+      {
+        "quote": "Our stay at Aurestia was absolutely exceptional. The ambiance, hospitality, and attention to detail made it a truly memorable experience. We can't wait to return.",
+        "name": "Ritika Sharma",
+        "role": "LEISURE TRAVELLER"
+      },
+      {
+        "quote": "From the beautiful surroundings to the thoughtful service, every moment felt special. Aurestia is the perfect place to relax, unwind, and create beautiful memories.",
+        "name": "Aarav Mehta",
+        "role": "FREQUENT TRAVELLER"
+      },
+      {
+        "quote": "An extraordinary escape with beautiful interiors, peaceful views, and genuinely warm hospitality. Every detail made our visit feel effortless and unforgettable.",
+        "name": "Ananya Kapoor",
+        "role": "LUXURY TRAVELLER"
+      }
+    ]
+  },
+  "aboutBanner": {
+    "titleId": "about-banner-title",
+    "ariaLabelledBy": "about-banner-title",
+    "title": "About Us",
+    "image": "/images/banner.png",
+    "breadcrumbLabel": "Breadcrumb",
+    "homeLabel": "Home",
+    "homeHref": "/",
+    "currentPage": "About Us"
+  },
+  "roomsBanner": {
+    "titleId": "rooms-banner-title",
+    "ariaLabelledBy": "rooms-banner-title",
+    "title": "Rooms & Suits",
+    "image": "/images/banner.png",
+    "breadcrumbLabel": "Breadcrumb",
+    "homeLabel": "Home",
+    "homeHref": "/",
+    "currentPage": "Rooms & Suits"
+  },
+  "roomsSuites": {
+    "id": "rooms",
+    "eyebrow": "EXPLORE",
+    "headingFirst": "Rooms &",
+    "headingAccent": "Suites",
+    "viewRoomLabelPrefix": "View",
+    "exploreRoomLabelPrefix": "Explore",
+    "adultsLabel": "ADULTS",
+    "childrenLabel": "CHILDREN",
+    "items": [
+      {
+        "name": "Ocean View Suite",
+        "image": "/images/home/deluxe-room.png",
+        "area": "55 M²",
+        "adults": 2,
+        "children": 1,
+        "href": "/rooms/rooms-details"
+      },
+      {
+        "name": "Deluxe Room",
+        "image": "/images/home/about-terrace.png",
+        "area": "38 M²",
+        "adults": 2,
+        "children": 1,
+        "href": "/rooms/rooms-details"
+      },
+      {
+        "name": "Ocean View Suite",
+        "image": "/images/home/about-bedroom.png",
+        "area": "55 M²",
+        "adults": 2,
+        "children": 1,
+        "href": "/rooms/rooms-details"
+      },
+      {
+        "name": "Deluxe Room",
+        "image": "/images/home/ocean-view-suite.png",
+        "area": "38 M²",
+        "adults": 2,
+        "children": 1,
+        "href": "/rooms/rooms-details"
+      }
+    ]
+  },
+  "amenitiesFacilities": {
+    "id": "amenities",
+    "eyebrow": "ROOM FEATURES",
+    "heading": "Amenities & Facilities",
+    "items": [
+      { "name": "Free Wi-Fi", "icon": "wifi" },
+      { "name": "Smart TV", "icon": "monitor" },
+      { "name": "Air Conditioning", "icon": "wind" },
+      { "name": "Luxury Bathroom", "icon": "bath" },
+      { "name": "Private Balcony", "icon": "door" },
+      { "name": "Mini Bar", "icon": "refrigerator" },
+      { "name": "Tea/Coffee Maker", "icon": "coffee" },
+      { "name": "In-Room Safe", "icon": "shield" },
+      { "name": "Bathrobes", "icon": "shirt" },
+      { "name": "Premium Toiletries", "icon": "package" }
+    ]
+  },
+  "oceanViewSuite": {
+    "id": "ocean-suite",
+    "galleryId": "room-gallery",
+    "eyebrow": "ROOMS & SUITES",
+    "title": "Ocean View Suite",
+    "description": "Experience the perfect blend of luxury and tranquility in our Ocean View Suite. Designed for comfort and relaxation, this spacious suite offers breathtaking sea views, elegant interiors, and modern amenities for a truly memorable stay.",
+    "roomSize": "55 M²",
+    "roomSizeLabel": "Room size",
+    "capacity": "2 ADULTS",
+    "capacityLabel": "Capacity",
+    "extraGuest": "1 CHILD",
+    "extraGuestLabel": "Extra guest",
+    "details": [
+      { "label": "BED TYPE", "value": "King Bed" },
+      { "label": "VIEW", "value": "Ocean View" },
+      { "label": "ROOM SIZE", "value": "55 M²" },
+      { "label": "OCCUPANCY", "value": "2 Adults + 1 Children" }
+    ],
+    "galleryLabel": "VIEW GALLERY",
+    "galleryCount": 4,
+    "gallery": [
+      {
+        "src": "/images/home/ocean-view-suite.png",
+        "alt": "Luxury king bedroom overlooking the ocean",
+        "label": "Bedroom"
+      },
+      {
+        "src": "/images/home/about-bedroom.png",
+        "alt": "Private balcony with panoramic ocean views",
+        "label": "Ocean Balcony"
+      },
+      {
+        "src": "/images/home/resort-terrace.png",
+        "alt": "Luxury marble bathroom with freestanding bathtub",
+        "label": "Bathroom"
+      },
+      {
+        "src": "/images/home/about-terrace.png",
+        "alt": "Elegant living area with ocean views",
+        "label": "Living Area"
+      }
+    ],
+    "openImageLabel": "Open large room image",
+    "thumbnailLabelPrefix": "View",
+    "closeGalleryLabel": "Close gallery",
+    "viewerLabel": "Room image viewer",
+    "previousImageLabel": "Previous image",
+    "nextImageLabel": "Next image"
+  }
+}

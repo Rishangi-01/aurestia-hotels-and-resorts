@@ -14,64 +14,7 @@ import {
   FiArrowRight,
   FiMove,
 } from "react-icons/fi";
-
-type Room = {
-  id: number;
-  name: string;
-  image: string;
-  area: string;
-  adults: number;
-  children: number;
-  description: string;
-};
-
-const rooms: Room[] = [
-  {
-    id: 1,
-    name: "Ocean View Suite",
-    image: "/images/home/ocean-view-suite.png",
-    area: "55 M²",
-    adults: 2,
-    children: 1,
-    description: "An elegant suite with panoramic ocean views.",
-  },
-  {
-    id: 2,
-    name: "Deluxe Room",
-    image: "/images/home/deluxe-room.png",
-    area: "38 M²",
-    adults: 2,
-    children: 1,
-    description: "Refined comfort with contemporary luxury.",
-  },
-  {
-    id: 3,
-    name: "Presidential Suite",
-    image: "/images/home/about-bedroom.png",
-    area: "85 M²",
-    adults: 3,
-    children: 2,
-    description: "A spacious retreat designed for exceptional stays.",
-  },
-  {
-    id: 4,
-    name: "Garden View Room",
-    image: "/images/home/about-terrace.png",
-    area: "42 M²",
-    adults: 2,
-    children: 1,
-    description: "Relax in a tranquil room surrounded by nature.",
-  },
-  {
-    id: 5,
-    name: "Premium Suite",
-    image: "/images/home/deluxe-room.png",
-    area: "68 M²",
-    adults: 2,
-    children: 2,
-    description: "A sophisticated sanctuary with premium amenities.",
-  },
-];
+import { roomsHeroContent } from "@/data";
 
 const variants = {
   enter: (direction: number) => ({
@@ -109,7 +52,7 @@ export default function RoomsHero() {
   }, []);
 
   const visibleCount = isMobile ? 1 : 2;
-  const maxIndex = rooms.length - visibleCount;
+  const maxIndex = roomsHeroContent.rooms.length - visibleCount;
   const currentIndex = Math.min(index, maxIndex);
 
   const goTo = useCallback(
@@ -144,12 +87,12 @@ export default function RoomsHero() {
     return () => window.clearInterval(timer);
   }, [isPaused, maxIndex, reduceMotion]);
 
-  const visibleRooms = rooms.slice(currentIndex, currentIndex + visibleCount);
+  const visibleRooms = roomsHeroContent.rooms.slice(currentIndex, currentIndex + visibleCount);
 
   return (
     <section
-      id="rooms"
-      aria-label="Explore our rooms and suites"
+      id={roomsHeroContent.id}
+      aria-label={roomsHeroContent.ariaLabel}
       className="overflow-hidden bg-white px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-16 xl:px-14 w-[100%]"
     >
       <div className="mx-auto">
@@ -162,7 +105,7 @@ export default function RoomsHero() {
               className="mb-4 flex items-center gap-5"
             >
               <span className="text-xs font-semibold tracking-[0.32em] text-[#ad8044]">
-                EXPLORE
+                {roomsHeroContent.eyebrow}
               </span>
               <span className="h-[2px] w-16 bg-[#b4864a]" />
             </motion.div>
@@ -173,8 +116,8 @@ export default function RoomsHero() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="font-serif text-[clamp(3rem,6.3vw,6.3rem)] leading-[0.95] tracking-[-0.055em]"
             >
-              <span className="text-[#29150f]">Rooms &amp; </span>
-              <span className="text-[#b78342]">Suites</span>
+              <span className="text-[#29150f]">{roomsHeroContent.headingFirst} </span>
+              <span className="text-[#b78342]">{roomsHeroContent.headingSecond}</span>
             </motion.h1>
           </div>
 
@@ -185,7 +128,7 @@ export default function RoomsHero() {
             className="flex items-center"
           >
             <Link
-              href="/rooms"
+              href={roomsHeroContent.viewAllHref}
               className="group inline-flex items-center gap-4 self-start text-sm font-medium tracking-wide text-[#30231e] md:self-auto"
             >
               <span className="hidden h-[2px] w-12 bg-[#b78342] sm:block" />
@@ -198,7 +141,7 @@ export default function RoomsHero() {
               </span>
 
               <span className="transition-colors group-hover:text-[#b78342]">
-                VIEW ALL ROOMS
+                {roomsHeroContent.viewAllLabel}
               </span>
             </Link>
           </motion.div>
@@ -220,7 +163,7 @@ export default function RoomsHero() {
             aria-live="off"
           >
             <AnimatePresence initial={false} custom={direction} mode="popLayout">
-              {visibleRooms.map((room, cardIndex) => (
+              {visibleRooms.map((room) => (
                 <motion.article
                   key={room.id}
                   custom={direction}
@@ -237,7 +180,7 @@ export default function RoomsHero() {
                   <Link
                     href={`/rooms/${room.id}`}
                     className="group block"
-                    aria-label={`Explore ${room.name}`}
+                    aria-label={`${roomsHeroContent.exploreRoomLabelPrefix} ${room.name}`}
                   >
                     <div className="relative aspect-[1.48/1] overflow-hidden bg-[#f5f0e9] sm:aspect-[1.5/1]">
                       <Image
@@ -266,12 +209,12 @@ export default function RoomsHero() {
                       <span>{room.area}</span>
                       <span className="h-4 w-[2px] bg-[#c49a63]" />
                       <span>
-                        {room.adults} {room.adults === 1 ? "ADULT" : "ADULTS"}
+                        {room.adults} {room.adults === 1 ? roomsHeroContent.adultLabel : roomsHeroContent.adultsLabel}
                       </span>
                       <span className="h-4 w-[2px] bg-[#c49a63]" />
                       <span>
                         {room.children}{" "}
-                        {room.children === 1 ? "CHILD" : "CHILDREN"}
+                        {room.children === 1 ? roomsHeroContent.childLabel : roomsHeroContent.childrenLabel}
                       </span>
                     </div>
                   </Link>
@@ -288,7 +231,7 @@ export default function RoomsHero() {
             <button
               type="button"
               onClick={previous}
-              aria-label="Previous rooms"
+              aria-label={roomsHeroContent.previousLabel}
               className="flex h-12 w-12 items-center justify-center rounded-full border border-[#bd8b47] text-[#bd8b47] transition-all duration-300 hover:bg-[#bd8b47] hover:text-white sm:h-[66px] sm:w-[66px]"
             >
               <FiArrowLeft size={23} />
@@ -300,7 +243,7 @@ export default function RoomsHero() {
                   key={dotIndex}
                   type="button"
                   onClick={() => goTo(dotIndex)}
-                  aria-label={`Go to room slide ${dotIndex + 1}`}
+                  aria-label={`${roomsHeroContent.slideLabelPrefix} ${dotIndex + 1}`}
                   aria-current={currentIndex === dotIndex ? "step" : undefined}
                   className={`rounded-full transition-all duration-300 ${
                     currentIndex === dotIndex
@@ -314,7 +257,7 @@ export default function RoomsHero() {
             <button
               type="button"
               onClick={next}
-              aria-label="Next rooms"
+              aria-label={roomsHeroContent.nextLabel}
               className="flex h-12 w-12 items-center justify-center rounded-full border border-[#bd8b47] text-[#bd8b47] transition-all duration-300 hover:bg-[#bd8b47] hover:text-white sm:h-[66px] sm:w-[66px]"
             >
               <FiArrowRight size={23} />

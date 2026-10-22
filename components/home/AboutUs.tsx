@@ -6,32 +6,12 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { IoIosBed } from "react-icons/io";
 import { IoDiamondOutline } from "react-icons/io5";
+import type { IconType } from "react-icons";
+import { aboutUsContent } from "@/data";
 
-const features = [
-  {
-    title: "Exceptional Stays",
-    description:
-      "Elegantly designed rooms and suites for ultimate comfort.",
-    icon: IoIosBed,
-  },
-  {
-    title: "Personalized Experiences",
-    description:
-      "Curated stays, gourmet dining and warm hospitality at every step.",
-    icon: IoDiamondOutline,
-  },
-];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 35 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
-  },
+const featureIcons: Record<string, IconType> = {
+  bed: IoIosBed,
+  diamond: IoDiamondOutline,
 };
 
 export default function AboutUs() {
@@ -52,7 +32,7 @@ export default function AboutUs() {
 
   return (
     <section
-      id="about"
+      id={aboutUsContent.id}
       className="relative overflow-hidden bg-[white] px-5 py-16 sm:px-8 sm:py-16 lg:px-12 lg:py-16 xl:px-8"
     >
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 items-center gap-12 lg:grid-cols-[0.96fr_1.04fr] lg:gap-12 xl:gap-16">
@@ -62,7 +42,7 @@ export default function AboutUs() {
             className="mb-5 flex items-center gap-5"
           >
             <span className="text-[11px] font-semibold tracking-[0.35em] text-[#805d37] sm:text-xs">
-              ABOUT US
+              {aboutUsContent.eyebrow}
             </span>
 
             <span className="h-[2px] w-16 bg-[#b68a4b]" />
@@ -73,11 +53,11 @@ export default function AboutUs() {
             className="max-w-[680px] font-serif text-[clamp(2.8rem,4.9vw,5.6rem)] leading-[0.98] tracking-[-0.055em]"
           >
             <span className="block text-[#24140f]">
-              Where Luxury
+              {aboutUsContent.headingLines[0]}
             </span>
 
             <span className="mt-1 block text-[#b18445]">
-              Feels Like Home
+              {aboutUsContent.headingLines[1]}
             </span>
           </motion.h2>
 
@@ -85,16 +65,12 @@ export default function AboutUs() {
             {...reveal(0.16)}
             className="mt-5 max-w-[690px] text-[15px] leading-[1.85] text-[#73717a] sm:text-base lg:mt-5"
           >
-            At Aurestia Hotels &amp; Resorts, we believe true luxury lies in
-            meaningful experiences, thoughtful details and the perfect harmony
-            between nature and comfort. Our properties are designed to offer
-            serene escapes, personalized hospitality and unforgettable moments
-            for every guest.
+            {aboutUsContent.description}
           </motion.p>
 
           <div className="mt-6 space-y-6 sm:mt-6 sm:space-y-7">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
+            {aboutUsContent.features.map((feature, index) => {
+              const Icon = featureIcons[feature.icon];
 
               return (
                 <motion.div
@@ -127,10 +103,10 @@ export default function AboutUs() {
 
           <motion.a
             {...reveal(0.45)}
-            href="#rooms"
+            href={aboutUsContent.cta.href}
             className="group mt-9 inline-flex items-center gap-2 border-b border-[#b18445] pb-2 text-sm font-semibold tracking-wide text-[#8c6537] transition-colors hover:text-[#51351c]"
           >
-            DISCOVER OUR STAYS
+            {aboutUsContent.cta.label}
             <FiArrowUpRight
               size={17}
               className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -144,8 +120,8 @@ export default function AboutUs() {
             className="group relative col-span-1 row-span-2 min-h-[360px] overflow-hidden rounded-xl sm:min-h-[480px] lg:min-h-[560px] xl:min-h-[620px]"
           >
             <Image
-              src="/images/home/about-pool.png"
-              alt="Luxury infinity pool overlooking a Mediterranean coastline"
+              src={aboutUsContent.images[0].src}
+              alt={aboutUsContent.images[0].alt}
               fill
               priority
               sizes="(max-width: 1023px) 50vw, 26vw"
@@ -160,8 +136,8 @@ export default function AboutUs() {
             className="group relative aspect-[1.15/1] overflow-hidden rounded-xl"
           >
             <Image
-              src="/images/home/about-terrace.png"
-              alt="Private resort terrace with elegant outdoor seating and sea views"
+              src={aboutUsContent.images[1].src}
+              alt={aboutUsContent.images[1].alt}
               fill
               sizes="(max-width: 1023px) 50vw, 24vw"
               className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.06]"
@@ -173,8 +149,8 @@ export default function AboutUs() {
             className="group relative aspect-[1.15/1] overflow-hidden rounded-xl"
           >
             <Image
-              src="/images/home/about-bedroom.png"
-              alt="Elegant hotel bedroom with warm lighting and a panoramic sea view"
+              src={aboutUsContent.images[2].src}
+              alt={aboutUsContent.images[2].alt}
               fill
               sizes="(max-width: 1023px) 50vw, 24vw"
               className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.06]"

@@ -3,12 +3,7 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-
-const resortImages = {
-  terrace: "/images/home/resort-terrace.png",
-  pool: "/images/home/resort-pool.png",
-  arch: "/images/home/resort-arch.png",
-};
+import { stayBeyondContent } from "@/data";
 
 export default function StayBeyond() {
   const shouldReduceMotion = useReducedMotion();
@@ -28,7 +23,7 @@ export default function StayBeyond() {
 
   return (
     <section
-      id="about"
+      id={stayBeyondContent.id}
       className="relative overflow-hidden bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-8 lg:pt-24 lg:pb-8"
     >
       <div className="mx-auto max-w-[1600px]">
@@ -36,10 +31,8 @@ export default function StayBeyond() {
           {...reveal()}
           className="mb-10 text-center font-serif text-[clamp(2.5rem,9.7vw,8.8rem)] leading-[1.05] tracking-[-0.055em] sm:mb-14 lg:mb-16"
         >
-          <span className="text-[#32180f]">A Stay </span>
-          <span className="text-[#b78339]">
-            Beyond Ordinary
-          </span>
+          <span className="text-[#32180f]">{stayBeyondContent.headingFirst} </span>
+          <span className="text-[#b78339]">{stayBeyondContent.headingSecond}</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 gap-7 sm:gap-8 lg:grid-cols-[0.92fr_1.38fr_0.82fr] lg:gap-6 xl:gap-7">
@@ -49,8 +42,8 @@ export default function StayBeyond() {
           >
             <div className="group relative aspect-[1.35/1] overflow-hidden sm:aspect-[1.65/1] lg:aspect-[1.12/1]">
               <Image
-                src={resortImages.terrace}
-                alt="Luxury resort terrace overlooking the sea"
+                src={stayBeyondContent.images[0].src}
+                alt={stayBeyondContent.images[0].alt}
                 fill
                 priority
                 sizes="(max-width: 639px) 100vw, (max-width: 1023px) 80vw, 30vw"
@@ -64,8 +57,7 @@ export default function StayBeyond() {
 
             <div className="max-w-md">
               <p className="text-base leading-[1.65] text-[#424242] sm:text-lg lg:text-[17px] xl:text-xl">
-                Discover serene escapes, luxurious stays and unforgettable
-                experiences in the heart of nature.
+                {stayBeyondContent.description}
               </p>
 
               <motion.div
@@ -83,8 +75,8 @@ export default function StayBeyond() {
             className="group relative aspect-[1.1/1] overflow-hidden sm:aspect-[1.45/1] lg:aspect-[0.94/1] xl:aspect-[0.96/1]"
           >
             <Image
-              src={resortImages.pool}
-              alt="Infinity pool at a luxury seaside resort"
+              src={stayBeyondContent.images[1].src}
+              alt={stayBeyondContent.images[1].alt}
               fill
               priority
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) 90vw, 45vw"
@@ -97,8 +89,8 @@ export default function StayBeyond() {
             className="group relative aspect-[0.95/1] overflow-hidden sm:aspect-[1.2/1] lg:mt-auto lg:aspect-[0.75/1] xl:mt-auto"
           >
             <Image
-              src={resortImages.arch}
-              alt="Elegant stone archway at a Mediterranean resort"
+              src={stayBeyondContent.images[2].src}
+              alt={stayBeyondContent.images[2].alt}
               fill
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) 80vw, 28vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045]"

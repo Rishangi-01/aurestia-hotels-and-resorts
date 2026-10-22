@@ -4,50 +4,17 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
-
-const facilities = [
-  {
-    id: "pool",
-    tab: "Infinity Pool",
-    title: "Infinity Pool",
-    description:
-      "Immerse yourself in tranquil waters and breathtaking ocean views. Experience unforgettable sunsets in our luxurious infinity pool.",
-    image: "/images/home/facilities-pool.png",
-    imageAlt: "Luxury infinity pool overlooking the ocean at sunset",
-    badge: "RELAX & UNWIND",
-  },
-  {
-    id: "spa",
-    tab: "Spa & Wellness",
-    title: "Spa & Wellness",
-    description:
-      "Restore your mind and body with rejuvenating treatments, calming surroundings and thoughtfully curated wellness experiences.",
-    image: "/images/home/facilities-spa.png",
-    imageAlt: "Peaceful luxury spa and wellness retreat",
-    badge: "RENEW YOURSELF",
-  },
-  {
-    id: "fitness",
-    tab: "Fitness Center",
-    title: "Fitness Center",
-    description:
-      "Stay active during your vacation in our state-of-the-art gym equipped with the latest machines.",
-    image: "/images/home/about-pool.png",
-    imageAlt: "Modern luxury hotel gym with premium fitness equipment",
-    badge: "STAY ACTIVE",
-  },
-];
+import { facilitiesContent } from "@/data";
 
 export default function Facilities() {
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(facilitiesContent.defaultActiveIndex);
   const reduceMotion = useReducedMotion();
 
-  const activeFacility = facilities[activeIndex];
+  const activeFacility = facilitiesContent.items[activeIndex];
 
   return (
     <section
-      id="facilities"
+      id={facilitiesContent.id}
       className="overflow-hidden bg-white py-8 sm:py-8 lg:py-12"
     >
       <div className="grid min-h-[650px] grid-cols-1 lg:min-h-[720px] lg:grid-cols-2">
@@ -110,7 +77,7 @@ export default function Facilities() {
               className="flex items-center gap-5"
             >
               <span className="font-serif text-2xl italic text-[#bd843b] sm:text-[28px]">
-                Indulge
+                {facilitiesContent.eyebrow}
               </span>
               <span className="h-[2px] w-20 bg-[#bd843b]" />
             </motion.div>
@@ -122,15 +89,15 @@ export default function Facilities() {
               transition={{ duration: 0.75, delay: 0.08 }}
               className="mt-3 font-serif text-[clamp(2.8rem,4.6vw,5rem)] leading-[1.08] tracking-[-0.045em] text-[#301710]"
             >
-              Our <span className="text-[#b6813f]">Facilities</span>
+              {facilitiesContent.headingPrefix} <span className="text-[#b6813f]">{facilitiesContent.headingAccent}</span>
             </motion.h2>
 
             <div
               role="tablist"
-              aria-label="Hotel facilities"
+              aria-label={facilitiesContent.tabListLabel}
               className="mt-8 flex flex-wrap border-b border-[#e7dfd5] sm:mt-9"
             >
-              {facilities.map((facility, index) => (
+              {facilitiesContent.items.map((facility, index) => (
                 <button
                   key={facility.id}
                   id={`facility-tab-${facility.id}`}
