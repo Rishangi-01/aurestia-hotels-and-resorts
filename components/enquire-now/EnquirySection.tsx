@@ -11,33 +11,14 @@ import {
   ShieldCheck,
   ChevronDown,
 } from "lucide-react";
+import { enquirySectionContent } from "@/data";
 
-const benefits = [
-  {
-    icon: Star,
-    title: "Best Options",
-    description:
-      "Get curated recommendations based on your preferences.",
-  },
-  {
-    icon: UsersRound,
-    title: "Personalized Support",
-    description:
-      "Customized travel plans for a memorable and stress-free trip.",
-  },
-  {
-    icon: Headset,
-    title: "Quick Response",
-    description:
-      "Our team will get back to you shortly with all the details.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Trusted Assistance",
-    description:
-      "Reliable support from planning to your return.",
-  },
-];
+const benefitIcons: Record<string, typeof Star> = {
+  star: Star,
+  users: UsersRound,
+  headset: Headset,
+  shield: ShieldCheck,
+};
 
 const inputClass =
   "w-full rounded-[3px] border border-[#e9e5df] bg-white/80 px-3 py-3 text-[12px] text-[#252525] outline-none transition-all duration-300 placeholder:text-[#858b94] hover:border-[#d4a064] focus:border-[#c98b40] focus:bg-white focus:ring-2 focus:ring-[#c98b40]/10 lg:text-[16px]";
@@ -71,8 +52,8 @@ export default function EnquirySection() {
 
   return (
     <section
-      id="travel-enquiry"
-      aria-labelledby="enquiry-heading"
+      id={enquirySectionContent.id}
+      aria-labelledby={enquirySectionContent.headingId}
       className="relative overflow-hidden bg-[#fffdfa] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-16"
     >
 
@@ -85,25 +66,23 @@ export default function EnquirySection() {
           <div className="mb-3 flex items-center justify-center gap-3">
             <span className="h-px w-7 bg-[#cb8a3d]" />
             <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c98537] sm:text-[11px]">
-              Enquire Now
+              {enquirySectionContent.eyebrow}
             </span>
             <span className="h-px w-7 bg-[#cb8a3d]" />
           </div>
 
           <h1
-            id="enquiry-heading"
+            id={enquirySectionContent.headingId}
             className="font-serif text-[34px] font-medium leading-[1.08] tracking-[-1.4px] text-[#15191c] sm:text-5xl md:text-[54px]"
           >
-            Let’s Plan Your
+            {enquirySectionContent.headingFirst}
             <span className="mt-1 block text-[#c98b43]">
-              Perfect Getaway
+              {enquirySectionContent.headingAccent}
             </span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-lg text-[12px] leading-6 text-[#78808b] sm:text-[13px] lg:text-[16px]">
-            Share your travel plans with us and our team will
-            get back to you with the best options, customized
-            just for you.
+            {enquirySectionContent.description}
           </p>
         </motion.div>
 
@@ -117,14 +96,13 @@ export default function EnquirySection() {
             <div className="mb-5">
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
                 <h2 className="font-serif text-[23px] font-semibold leading-tight tracking-[-0.5px] text-[#171b1d] sm:text-[27px] lg:text-[2.2rem]">
-                  Send Us an Enquiry
+                  {enquirySectionContent.formHeading}
                 </h2>
                 <span className="h-[2px] w-9 bg-[#c98b43]" />
               </div>
 
               <p className="mt-2 max-w-lg text-[12px] leading-[1.8] text-[#78808b] sm:text-[13px] lg:text-[16px]">
-                Fill in your details and we will get back to you
-                shortly with the best options for your trip.
+                {enquirySectionContent.formDescription}
               </p>
             </div>
 
@@ -140,15 +118,15 @@ export default function EnquirySection() {
                 transition={{ duration: 0.45, delay: 0.12 }}
               >
                 <label htmlFor="fullName" className="sr-only">
-                  Full name
+                  {enquirySectionContent.fields.fullName.label}
                 </label>
                 <input
                   id="fullName"
                   name="fullName"
                   type="text"
                   autoComplete="name"
-                  placeholder="Full Name *"
-                  aria-label="Full name"
+                  placeholder={enquirySectionContent.fields.fullName.placeholder}
+                  aria-label={enquirySectionContent.fields.fullName.label}
                   required
                   minLength={2}
                   className={inputClass}
@@ -162,15 +140,15 @@ export default function EnquirySection() {
                 transition={{ duration: 0.45, delay: 0.19 }}
               >
                 <label htmlFor="email" className="sr-only">
-                  Email address
+                  {enquirySectionContent.fields.email.label}
                 </label>
                 <input
                   id="email"
                   name="email"
                   type="email"
                   autoComplete="email"
-                  placeholder="Email Address *"
-                  aria-label="Email address"
+                  placeholder={enquirySectionContent.fields.email.placeholder}
+                  aria-label={enquirySectionContent.fields.email.label}
                   required
                   className={inputClass}
                 />
@@ -183,18 +161,18 @@ export default function EnquirySection() {
                 transition={{ duration: 0.45, delay: 0.26 }}
               >
                 <label htmlFor="phone" className="sr-only">
-                  Phone number
+                  {enquirySectionContent.fields.phone.label}
                 </label>
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
                   autoComplete="tel"
-                  placeholder="Phone Number *"
-                  aria-label="Phone number"
+                  placeholder={enquirySectionContent.fields.phone.placeholder}
+                  aria-label={enquirySectionContent.fields.phone.label}
                   required
                   pattern="[+]?[0-9 ()-]{7,20}"
-                  title="Please enter a valid phone number."
+                  title={enquirySectionContent.fields.phone.invalidMessage}
                   className={inputClass}
                 />
               </motion.div>
@@ -207,13 +185,13 @@ export default function EnquirySection() {
                 className="relative"
               >
                 <label htmlFor="travelDate" className="sr-only">
-                  Travel date
+                  {enquirySectionContent.fields.travelDate.label}
                 </label>
                 <input
                   id="travelDate"
                   name="travelDate"
                   type="date"
-                  aria-label="Travel date"
+                  aria-label={enquirySectionContent.fields.travelDate.label}
                   className={`${inputClass} [color-scheme:light]`}
                 />
               </motion.div>
@@ -226,26 +204,23 @@ export default function EnquirySection() {
                 className="relative"
               >
                 <label htmlFor="destination" className="sr-only">
-                  Destination or location
+                  {enquirySectionContent.fields.destination.label}
                 </label>
                 <select
                   id="destination"
                   name="destination"
                   defaultValue=""
-                  aria-label="Destination or location"
+                  aria-label={enquirySectionContent.fields.destination.label}
                   className={`${inputClass} appearance-none pr-9`}
                 >
                   <option value="" disabled>
-                    Destination / Location
+                    {enquirySectionContent.fields.destination.placeholder}
                   </option>
-                  <option value="domestic">Domestic Travel</option>
-                  <option value="international">
-                    International Travel
-                  </option>
-                  <option value="mountains">Mountains &amp; Hills</option>
-                  <option value="beach">Beach Getaway</option>
-                  <option value="adventure">Adventure Trip</option>
-                  <option value="other">Other Destination</option>
+                  {enquirySectionContent.fields.destination.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
                 </select>
                 <ChevronDown
                   size={15}
@@ -261,15 +236,15 @@ export default function EnquirySection() {
                 transition={{ duration: 0.45, delay: 0.47 }}
               >
                 <label htmlFor="message" className="sr-only">
-                  Your message
+                  {enquirySectionContent.fields.message.label}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={3}
                   maxLength={1000}
-                  placeholder="Your Message (Optional)"
-                  aria-label="Your message (optional)"
+                  placeholder={enquirySectionContent.fields.message.placeholder}
+                  aria-label={enquirySectionContent.fields.message.ariaLabel}
                   className={`${inputClass} min-h-[88px] resize-y`}
                 />
               </motion.div>
@@ -280,7 +255,9 @@ export default function EnquirySection() {
                 whileTap={reduceMotion ? undefined : { scale: 0.99 }}
                 className="group flex w-full items-center justify-center gap-2 rounded-[3px] bg-gradient-to-r from-[#c98a40] to-[#bd7d32] px-5 py-3 text-[13px] font-medium text-white shadow-[0_4px_12px_rgba(190,125,50,0.12)] transition-shadow duration-300 hover:shadow-[0_7px_20px_rgba(190,125,50,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98b43] focus-visible:ring-offset-2"
               >
-                {submitted ? "Enquiry Submitted" : "Submit Enquiry"}
+                {submitted
+                  ? enquirySectionContent.submittedLabel
+                  : enquirySectionContent.submitLabel}
                 <ArrowRight
                   size={16}
                   className="transition-transform duration-300 group-hover:translate-x-1"
@@ -292,8 +269,7 @@ export default function EnquirySection() {
                   role="status"
                   className="pt-1 text-center text-xs text-[#55805b]"
                 >
-                  Thank you! Your details have been validated.
-                  Please connect your backend to receive enquiries.
+                  {enquirySectionContent.successMessage}
                 </p>
               )}
             </form>
@@ -302,26 +278,26 @@ export default function EnquirySection() {
           {/* Benefits panel */}
           <motion.aside
             {...reveal(0.2)}
-            aria-labelledby="benefits-heading"
+            aria-labelledby={enquirySectionContent.benefitsHeadingId}
             className="border-t border-[#eee8df] pt-7 md:border-l md:border-t-0 md:pl-6 md:pt-6 lg:pl-8 lg:pt-8"
           >
             <div className="mb-7">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <h2
-                  id="benefits-heading"
+                  id={enquirySectionContent.benefitsHeadingId}
                   className="font-serif text-[24px] font-semibold leading-[1.15] tracking-[-0.5px] text-[#171b1d] sm:text-[27px] lg:text-[2.2rem]"
                 >
-                  Why Enquire
+                  {enquirySectionContent.benefitsHeadingFirst}
                   <br />
-                  With Us?
+                  {enquirySectionContent.benefitsHeadingSecond}
                 </h2>
                 <span className="h-[2px] w-9 bg-[#c98b43]" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-1 md:gap-7 lg:gap-8">
-              {benefits.map((benefit, index) => {
-                const Icon = benefit.icon;
+              {enquirySectionContent.benefits.map((benefit, index) => {
+                const Icon = benefitIcons[benefit.icon];
 
                 return (
                   <motion.div

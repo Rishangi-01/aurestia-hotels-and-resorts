@@ -36,10 +36,10 @@
       { "label": "Home", "href": "/" },
       { "label": "About Us", "href": "/about" },
       { "label": "Rooms & Suites", "href": "/rooms" },
-      { "label": "Dining", "href": "#dining" },
-      { "label": "Spa & Wellness", "href": "#spa" },
-      { "label": "Facilities", "href": "#facilities" },
-      { "label": "Contact Us", "href": "#contact" }
+      { "label": "Blog", "href": "/blog" },
+      { "label": "Testimonials", "href": "/testimonials" },
+      { "label": "Enquire Now", "href": "/enquire-now" },
+      { "label": "Contact Us", "href": "/contact" }
     ],
     "contactHeading": "Get In Touch",
     "contact": {
@@ -373,5 +373,426 @@
     "viewerLabel": "Room image viewer",
     "previousImageLabel": "Previous image",
     "nextImageLabel": "Next image"
+  },
+  "roomsDetailsBanner": {
+    "titleId": "rooms-details-banner-title",
+    "ariaLabelledBy": "rooms-details-banner-title",
+    "title": "Rooms & Suits Detail",
+    "image": "/images/banner.png",
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbSeparator": "/",
+    "homeLabel": "Home",
+    "homeHref": "/",
+    "currentPage": "Rooms & Suits Detail"
+  },
+  "testimonialBanner": {
+    "titleId": "testimonial-banner-title",
+    "ariaLabelledBy": "testimonial-banner-title",
+    "title": "Testimonials",
+    "image": "/images/banner.png",
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbSeparator": "/",
+    "homeLabel": "Home",
+    "homeHref": "/",
+    "currentPage": "Testimonials"
+  },
+  "testimonialsGrid": {
+    "id": "guest-reviews",
+    "eyebrow": "VOICE FROM OUR GUESTS",
+    "headingFirst": "Testi",
+    "headingAccent": "monials",
+    "description": "Real stories from our guests who have experienced the comfort, elegance, and warm hospitality at Aurestia.",
+    "ratingLabel": "5 out of 5 stars",
+    "reviews": [
+      {
+        "name": "Priya Mehta",
+        "location": "Mumbai, India",
+        "review": "Aurestia made our vacation truly special. The rooms were luxurious, the staff was incredibly warm, and every detail was perfect."
+      },
+      {
+        "name": "Rahul Sharma",
+        "location": "Bangalore, India",
+        "review": "An amazing experience from start to finish. The beachfront location, delicious food, and serene atmosphere made our stay unforgettable."
+      },
+      {
+        "name": "Anjali Verma",
+        "location": "Delhi, India",
+        "review": "Exceptional hospitality and world-class facilities. Aurestia is the perfect blend of luxury and comfort. We can't wait to come back!"
+      },
+      {
+        "name": "Priya Mehta",
+        "location": "Mumbai, India",
+        "review": "Aurestia made our vacation truly special. The rooms were luxurious, the staff was incredibly warm, and every detail was perfect."
+      },
+      {
+        "name": "Rahul Sharma",
+        "location": "Bangalore, India",
+        "review": "An amazing experience from start to finish. The beachfront location, delicious food, and serene atmosphere made our stay unforgettable."
+      },
+      {
+        "name": "Anjali Verma",
+        "location": "Delhi, India",
+        "review": "Exceptional hospitality and world-class facilities. Aurestia is the perfect blend of luxury and comfort. We can't wait to come back!"
+      },
+      {
+        "name": "Priya Mehta",
+        "location": "Mumbai, India",
+        "review": "Aurestia made our vacation truly special. The rooms were luxurious, the staff was incredibly warm, and every detail was perfect."
+      },
+      {
+        "name": "Rahul Sharma",
+        "location": "Bangalore, India",
+        "review": "An amazing experience from start to finish. The beachfront location, delicious food, and serene atmosphere made our stay unforgettable."
+      },
+      {
+        "name": "Anjali Verma",
+        "location": "Delhi, India",
+        "review": "Exceptional hospitality and world-class facilities. Aurestia is the perfect blend of luxury and comfort. We can't wait to come back!"
+      }
+    ]
+  },
+  "blogBanner": {
+    "titleId": "blog-banner-title",
+    "ariaLabelledBy": "blog-banner-title",
+    "title": "Blogs",
+    "image": "/images/banner.png",
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbSeparator": "/",
+    "homeLabel": "Home",
+    "homeHref": "/",
+    "currentPage": "Blogs"
+  },
+  "blogSection": {
+    "id": "blog",
+    "eyebrow": "Insights",
+    "headingFirst": "Our",
+    "headingAccent": "Blog",
+    "description": "Discover stories, travel tips, and curated experiences to make your stay more memorable at Aurestia.",
+    "readMoreLabel": "Read More",
+    "readAriaLabelPrefix": "Read",
+    "posts": [
+      {
+        "date": "12 AUG 2026",
+        "title": "The Ultimate Guide to a Relaxing Beach Vacation",
+        "description": "Discover top tips and ideas to make the most of your beach getaway, from the best activities to unforgettable experiences.",
+        "image": "/images/home/about-bedroom.png",
+        "alt": "Luxury beachfront resort terrace overlooking the ocean at sunset",
+        "href": "/blog/blog-details"
+      },
+      {
+        "date": "05 AUG 2026",
+        "title": "How to Choose the Perfect Room for Your Stay",
+        "description": "Explore different room types and find the ideal stay option that matches your travel style and comfort needs.",
+        "image": "/images/home/about-terrace.png",
+        "alt": "Elegant luxury hotel bedroom with a beautiful ocean view",
+        "href": "/blog/blog-details"
+      },
+      {
+        "date": "28 JUL 2026",
+        "title": "Wellness Retreats: Reconnect with Mind and Body",
+        "description": "Learn how a wellness retreat can help you recharge, reduce stress, and bring balance to your everyday life.",
+        "image": "/images/home/deluxe-room.png",
+        "alt": "Rolled white spa towels and flowers in a peaceful luxury resort",
+        "href": "/blog/blog-details"
+      },
+      {
+        "date": "18 JUL 2026",
+        "title": "Discover the Art of Luxury Resort Living",
+        "description": "Discover thoughtful details, beautiful surroundings, and exceptional hospitality that make every stay special.",
+        "image": "/images/home/facilities-spa.png",
+        "alt": "Elegant outdoor lounge at a luxury resort",
+        "href": "/blog/blog-details"
+      },
+      {
+        "date": "10 JUL 2026",
+        "title": "A Food Lover's Guide to Coastal Dining",
+        "description": "Explore memorable dining experiences, fresh local flavors, and beautiful settings for your next getaway.",
+        "image": "/images/home/ocean-view-suite.png",
+        "alt": "Beautifully presented dining experience at a coastal resort",
+        "href": "/blog/blog-details"
+      },
+      {
+        "date": "02 JUL 2026",
+        "title": "Slow Travel: Make Every Moment Count",
+        "description": "Take a slower approach to travel and enjoy meaningful experiences, peaceful moments, and local discoveries.",
+        "image": "/images/home/resort-terrace.png",
+        "alt": "Peaceful resort terrace surrounded by tropical greenery",
+        "href": "/blog/blog-details"
+      }
+    ]
+  },
+  "blogDetailsBanner": {
+    "titleId": "blog-details-banner-title",
+    "ariaLabelledBy": "blog-details-banner-title",
+    "title": "Blogs Detail",
+    "image": "/images/banner.png",
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbSeparator": "/",
+    "homeLabel": "Home",
+    "homeHref": "/",
+    "currentPage": "Blogs Detail"
+  },
+  "beachVacationArticle": {
+    "recentPostsHeading": "Recent Posts",
+    "recentPosts": [
+      {
+        "date": "05 AUG 2026",
+        "title": "How to Choose the Perfect Room for Your Stay",
+        "image": "/images/home/deluxe-room.png",
+        "href": "/blog/choose-perfect-room"
+      },
+      {
+        "date": "28 JUL 2026",
+        "title": "Wellness Retreats: Reconnect with Mind and Body",
+        "image": "/images/home/resort-terrace.png",
+        "href": "/blog/wellness-retreats"
+      },
+      {
+        "date": "18 JUL 2026",
+        "title": "A Food Lover's Guide to Resort Dining",
+        "image": "/images/home/about-bedroom.png",
+        "href": "/blog/resort-dining"
+      },
+      {
+        "date": "10 JUL 2026",
+        "title": "Top 5 Beach Destinations for Your Next Getaway",
+        "image": "/images/home/about-terrace.png",
+        "href": "/blog/beach-destinations"
+      }
+    ],
+    "sections": [
+      {
+        "number": "01",
+        "title": "Choose the Right Destination",
+        "description": "The first step to a perfect beach vacation is picking the right destination. Whether you prefer serene, secluded beaches or vibrant coastal towns, the right location sets the tone for your entire trip. Consider the kind of experience you're looking for — from tranquil escapes to lively beach atmospheres.",
+        "images": [
+          {
+            "src": "/images/home/deluxe-room.png",
+            "alt": "Tropical beach with palm trees and turquoise water"
+          },
+          {
+            "src": "/images/home/facilities-spa.png",
+            "alt": "Luxury resort infinity pool overlooking the ocean"
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Plan Your Activities",
+        "description": "From water sports and snorkeling to spa treatments and fine dining, beach destinations offer endless activities. Plan a mix of adventure and relaxation to make your trip truly memorable. Whether it's a sunrise beach walk, a snorkeling adventure, or a sunset dinner by the shore, there's always something special to experience.",
+        "banner": {
+          "src": "/images/home/ocean-view-suite.png",
+          "alt": "Luxury beachfront lounge at golden hour"
+        }
+      },
+      {
+        "number": "03",
+        "title": "Pack Smart",
+        "description": "Light, comfortable clothing, sunscreen, and beach essentials are a must. Don't forget your camera to capture the breathtaking views and special moments. A little preparation goes a long way in ensuring a smooth and enjoyable vacation."
+      }
+    ],
+    "quote": "A beach vacation is not just a trip, it's a chance to reconnect with yourself, nature, and the beauty around you.",
+    "readArticleLabel": "Read article",
+    "promotion": {
+      "image": "/images/home/about-pool.png",
+      "imageAlt": "Elegant ocean-view suite at Aurestia",
+      "eyebrow": "Your next escape",
+      "headingFirst": "Experience",
+      "headingSecond": "The Difference",
+      "description": "Your next beach adventure is just a click away.",
+      "linkLabel": "EXPLORE OUR ROOMS",
+      "href": "/rooms"
+    }
+  },
+  "blogArticleHero": {
+    "headingFirst": "The Ultimate Guide to a",
+    "headingSecond": "Relaxing",
+    "headingAccent": "Beach Vacation",
+    "description": "Discover tips and ideas to make the most of your beach getaway, from the best activities to unforgettable experiences.",
+    "image": "/images/home/ocean-view-suite.png",
+    "imageAlt": "Luxury beachfront resort terrace overlooking the ocean at sunset"
+  },
+  "enquireNowBanner": {
+    "titleId": "enquire-now-banner-title",
+    "ariaLabelledBy": "enquire-now-banner-title",
+    "title": "Enquire Now",
+    "image": "/images/banner.png",
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbSeparator": "/",
+    "homeLabel": "Home",
+    "homeHref": "/",
+    "currentPage": "Enquire Now"
+  },
+  "enquirySection": {
+    "id": "travel-enquiry",
+    "headingId": "enquiry-heading",
+    "benefitsHeadingId": "benefits-heading",
+    "eyebrow": "Enquire Now",
+    "headingFirst": "Let’s Plan Your",
+    "headingAccent": "Perfect Getaway",
+    "description": "Share your travel plans with us and our team will get back to you with the best options, customized just for you.",
+    "formHeading": "Send Us an Enquiry",
+    "formDescription": "Fill in your details and we will get back to you shortly with the best options for your trip.",
+    "fields": {
+      "fullName": {
+        "label": "Full name",
+        "placeholder": "Full Name *"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "Email Address *"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "Phone Number *",
+        "invalidMessage": "Please enter a valid phone number."
+      },
+      "travelDate": {
+        "label": "Travel date"
+      },
+      "destination": {
+        "label": "Destination or location",
+        "placeholder": "Destination / Location",
+        "options": [
+          { "value": "domestic", "label": "Domestic Travel" },
+          { "value": "international", "label": "International Travel" },
+          { "value": "mountains", "label": "Mountains & Hills" },
+          { "value": "beach", "label": "Beach Getaway" },
+          { "value": "adventure", "label": "Adventure Trip" },
+          { "value": "other", "label": "Other Destination" }
+        ]
+      },
+      "message": {
+        "label": "Your message",
+        "ariaLabel": "Your message (optional)",
+        "placeholder": "Your Message (Optional)"
+      }
+    },
+    "submitLabel": "Submit Enquiry",
+    "submittedLabel": "Enquiry Submitted",
+    "successMessage": "Thank you! Your details have been validated. Please connect your backend to receive enquiries.",
+    "benefitsHeadingFirst": "Why Enquire",
+    "benefitsHeadingSecond": "With Us?",
+    "benefits": [
+      {
+        "icon": "star",
+        "title": "Best Options",
+        "description": "Get curated recommendations based on your preferences."
+      },
+      {
+        "icon": "users",
+        "title": "Personalized Support",
+        "description": "Customized travel plans for a memorable and stress-free trip."
+      },
+      {
+        "icon": "headset",
+        "title": "Quick Response",
+        "description": "Our team will get back to you shortly with all the details."
+      },
+      {
+        "icon": "shield",
+        "title": "Trusted Assistance",
+        "description": "Reliable support from planning to your return."
+      }
+    ]
+  },
+  "contactBanner": {
+    "titleId": "contact-banner-title",
+    "ariaLabelledBy": "contact-banner-title",
+    "title": "Contact Us",
+    "image": "/images/banner.png",
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbSeparator": "/",
+    "homeLabel": "Home",
+    "homeHref": "/",
+    "currentPage": "Contact Us"
+  },
+  "contactSection": {
+    "id": "contact",
+    "headingId": "contact-heading",
+    "informationHeadingId": "get-in-touch-heading",
+    "eyebrow": "Contact Us",
+    "headingFirst": "We’d Love to",
+    "headingAccent": "Hear From You",
+    "description": "Whether you have a question, need travel assistance, or want a customized recommendation, our team is here to help you.",
+    "informationHeading": "Get in Touch",
+    "informationDescription": "Reach out to us through the details below. Our team will be happy to assist you.",
+    "details": [
+      {
+        "icon": "phone",
+        "title": "Call Us",
+        "lines": ["+1 000000000"],
+        "href": "tel:+1 000000000"
+      },
+      {
+        "icon": "mail",
+        "title": "Email Us",
+        "lines": ["info@xyz.com"],
+        "href": "mailto:info@xyz.com"
+      },
+      {
+        "icon": "mapPin",
+        "title": "Visit Us",
+        "lines": ["123 Design Avenue,", "New York, NY 10001, USA"]
+      },
+      {
+        "icon": "clock",
+        "title": "Office Hours",
+        "lines": ["Mon - Sat, 9:00 AM - 6:00 PM", "Sunday: Closed"]
+      }
+    ],
+    "formHeading": "Send Us a Message",
+    "formDescription": "Fill in your details and we will get back to you shortly.",
+    "fields": {
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "requiredIndicator": "*"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "Enter your email address",
+        "requiredIndicator": "*"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "Enter your phone number",
+        "invalidMessage": "Please enter a valid phone number.",
+        "requiredIndicator": "*"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Select a subject",
+        "requiredIndicator": "*",
+        "options": [
+          { "value": "travel-enquiry", "label": "Travel Enquiry" },
+          { "value": "booking", "label": "Booking Assistance" },
+          { "value": "custom-package", "label": "Custom Travel Package" },
+          { "value": "feedback", "label": "Feedback" },
+          { "value": "other", "label": "Other" }
+        ]
+      },
+      "message": {
+        "label": "Your Message (Optional)",
+        "placeholder": "Write your message here..."
+      }
+    },
+    "submitLabel": "Send Message",
+    "submittedLabel": "Message Ready",
+    "successMessage": "Your details are valid. Connect the form to your backend to send your message."
+  },
+  "locationMap": {
+    "id": "location",
+    "headingId": "location-heading",
+    "iframeTitle": "Map showing Central Park, New York City",
+    "mapUrl": "https://maps.google.com/maps?q=Central%20Park%2C%20New%20York%2C%20NY%2C%20USA&z=14&output=embed",
+    "directionsUrlPrefix": "https://www.google.com/maps/dir/?api=1&destination=",
+    "destination": "Central Park, New York, NY, USA",
+    "eyebrow": "Our Location",
+    "headingFirst": "Find Us on",
+    "headingAccent": "the Map",
+    "description": "We are conveniently located near the heart of New York City. Visit us for personalized travel consultation and expert guidance.",
+    "directionsLabel": "Get Directions",
+    "markerLabel": "NEW YORK, USA"
   }
 }

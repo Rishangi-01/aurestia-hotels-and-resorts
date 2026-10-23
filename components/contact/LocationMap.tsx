@@ -3,23 +3,19 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, MapPin } from "lucide-react";
+import { locationMapContent } from "@/data";
 
 export default function LocationMap() {
   const reduceMotion = useReducedMotion();
 
-  const destination = "Central Park, New York, NY, USA";
-
-  const mapUrl =
-    "https://maps.google.com/maps?q=Central%20Park%2C%20New%20York%2C%20NY%2C%20USA&z=14&output=embed";
-
   const directionsUrl =
-    "https://www.google.com/maps/dir/?api=1&destination=" +
-    encodeURIComponent(destination);
+    locationMapContent.directionsUrlPrefix +
+    encodeURIComponent(locationMapContent.destination);
 
   return (
     <section
-      id="location"
-      aria-labelledby="location-heading"
+      id={locationMapContent.id}
+      aria-labelledby={locationMapContent.headingId}
       className="relative isolate overflow-hidden pb-8 sm:pb-10 lg:pb-12"
     >
       <div className="relative mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
@@ -27,8 +23,8 @@ export default function LocationMap() {
           {/* Google Maps */}
           <div className="absolute inset-0 bg-[#eeeee8]">
             <iframe
-              title="Map showing Central Park, New York City"
-              src={mapUrl}
+              title={locationMapContent.iframeTitle}
+              src={locationMapContent.mapUrl}
               className="h-full w-full border-0"
               loading="lazy"
               allowFullScreen
@@ -60,25 +56,25 @@ export default function LocationMap() {
             {/* Eyebrow */}
             <div className="mb-3 flex items-center gap-3">
               <span className="text-[10px] font-semibold uppercase tracking-[0.19em] text-[#c98b43] sm:text-[11px]">
-                Our Location
+                {locationMapContent.eyebrow}
               </span>
               <span className="h-px w-9 bg-[#c98b43]" />
             </div>
 
             {/* Heading */}
             <h2
-              id="location-heading"
+              id={locationMapContent.headingId}
               className="font-serif text-[27px] font-semibold leading-tight tracking-[-0.7px] text-[#171b1d] sm:text-[30px] lg:text-[32px]"
             >
-              Find Us on{" "}
-              <span className="text-[#c98b43]">the Map</span>
+              {locationMapContent.headingFirst}{" "}
+              <span className="text-[#c98b43]">
+                {locationMapContent.headingAccent}
+              </span>
             </h2>
 
             {/* Description */}
             <p className="mt-3 max-w-[340px] text-[12px] leading-[1.8] text-[#77808a] sm:text-[13px]">
-              We are conveniently located near the heart of New York
-              City. Visit us for personalized travel consultation
-              and expert guidance.
+              {locationMapContent.description}
             </p>
 
             {/* Address */}
@@ -88,7 +84,7 @@ export default function LocationMap() {
                 className="mt-0.5 shrink-0 text-[#c98b43]"
                 aria-hidden="true"
               />
-              <span>Central Park, New York, NY, USA</span>
+              <span>{locationMapContent.destination}</span>
             </div>
 
             {/* Directions button */}
@@ -104,7 +100,7 @@ export default function LocationMap() {
               whileTap={reduceMotion ? undefined : { scale: 0.98 }}
               className="group mt-5 inline-flex min-h-11 items-center justify-center gap-3 border border-[#c98b43] bg-transparent px-5 py-3 font-serif text-[14px] font-semibold text-[#c98b43] transition-colors duration-300 hover:bg-[#c98b43] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98b43] focus-visible:ring-offset-2 sm:px-6"
             >
-              Get Directions
+              {locationMapContent.directionsLabel}
               <ArrowRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
@@ -130,7 +126,7 @@ export default function LocationMap() {
           >
             <MapPin size={17} className="text-[#c98b43]" />
             <span className="text-[10px] font-semibold tracking-wide text-[#343a3d] sm:text-xs">
-              NEW YORK, USA
+              {locationMapContent.markerLabel}
             </span>
           </motion.div>
         </div>

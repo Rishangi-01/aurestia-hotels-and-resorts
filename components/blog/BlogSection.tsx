@@ -5,63 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-
-const blogPosts = [
-  {
-    date: "12 AUG 2026",
-    title: "The Ultimate Guide to a Relaxing Beach Vacation",
-    description:
-      "Discover top tips and ideas to make the most of your beach getaway, from the best activities to unforgettable experiences.",
-    image: "/images/home/about-bedroom.png",
-    alt: "Luxury beachfront resort terrace overlooking the ocean at sunset",
-    href: "/blog/blog-details",
-  },
-  {
-    date: "05 AUG 2026",
-    title: "How to Choose the Perfect Room for Your Stay",
-    description:
-      "Explore different room types and find the ideal stay option that matches your travel style and comfort needs.",
-    image: "/images/home/about-terrace.png",
-    alt: "Elegant luxury hotel bedroom with a beautiful ocean view",
-    href: "/blog/blog-details",
-  },
-  {
-    date: "28 JUL 2026",
-    title: "Wellness Retreats: Reconnect with Mind and Body",
-    description:
-      "Learn how a wellness retreat can help you recharge, reduce stress, and bring balance to your everyday life.",
-    image: "/images/home/deluxe-room.png",
-    alt: "Rolled white spa towels and flowers in a peaceful luxury resort",
-    href: "/blog/blog-details",
-  },
-  {
-    date: "18 JUL 2026",
-    title: "Discover the Art of Luxury Resort Living",
-    description:
-      "Discover thoughtful details, beautiful surroundings, and exceptional hospitality that make every stay special.",
-    image: "/images/home/facilities-spa.png",
-    alt: "Elegant outdoor lounge at a luxury resort",
-    href: "/blog/blog-details",
-  },
-  {
-    date: "10 JUL 2026",
-    title: "A Food Lover's Guide to Coastal Dining",
-    description:
-      "Explore memorable dining experiences, fresh local flavors, and beautiful settings for your next getaway.",
-    image: "/images/home/ocean-view-suite.png",
-    alt: "Beautifully presented dining experience at a coastal resort",
-    href: "/blog/blog-details",
-  },
-  {
-    date: "02 JUL 2026",
-    title: "Slow Travel: Make Every Moment Count",
-    description:
-      "Take a slower approach to travel and enjoy meaningful experiences, peaceful moments, and local discoveries.",
-    image: "/images/home/resort-terrace.png",
-    alt: "Peaceful resort terrace surrounded by tropical greenery",
-    href: "/blog/blog-details",
-  },
-];
+import { blogSectionContent } from "@/data";
 
 export default function BlogSection() {
   const reduceMotion = useReducedMotion();
@@ -73,7 +17,7 @@ export default function BlogSection() {
 
   return (
     <section
-      id="blog"
+      id={blogSectionContent.id}
       className="overflow-hidden bg-[#fcf8f2] px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20"
     >
       <div className="mx-auto max-w-[1440px]">
@@ -91,23 +35,25 @@ export default function BlogSection() {
         >
           <div className="mb-2 flex items-center justify-center gap-3">
             <span className="text-[10px] font-medium uppercase tracking-[0.24em] text-[#b77d39] sm:text-xs">
-              Insights
+              {blogSectionContent.eyebrow}
             </span>
             <span className="h-px w-8 bg-[#c6975d]" />
           </div>
 
           <h2 className="font-serif text-4xl leading-tight tracking-[-0.035em] text-[#25150f] sm:text-5xl md:text-6xl">
-            Our <span className="text-[#b9803b]">Blog</span>
+            {blogSectionContent.headingFirst}{" "}
+            <span className="text-[#b9803b]">
+              {blogSectionContent.headingAccent}
+            </span>
           </h2>
 
           <p className="mx-auto mt-3 max-w-lg text-xs leading-5 text-[#79716b] sm:text-sm sm:leading-6 lg:text-lg">
-            Discover stories, travel tips, and curated experiences to make
-            your stay more memorable at Aurestia.
+            {blogSectionContent.description}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-12">
-          {blogPosts.map((post, index) => (
+          {blogSectionContent.posts.map((post, index) => (
             <motion.article
               key={index}
               initial={reduceMotion ? false : "hidden"}
@@ -124,7 +70,7 @@ export default function BlogSection() {
               {/* Image */}
               <Link
                 href={post.href}
-                aria-label={`Read ${post.title}`}
+                aria-label={`${blogSectionContent.readAriaLabelPrefix} ${post.title}`}
                 className="relative block aspect-[1.48/1] overflow-hidden bg-[#eee5da]"
               >
                 <Image
@@ -169,7 +115,7 @@ export default function BlogSection() {
                     className="group/link inline-flex min-h-9 items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#a76d32] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b9803b] lg:text-[16px] lg:gap-5"
                   >
                     <span className="transition-colors duration-300 group-hover/link:text-[#70451e]">
-                      Read More
+                      {blogSectionContent.readMoreLabel}
                     </span>
 
                     <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#c18b4c] transition-all duration-300 group-hover/link:bg-[#b9803b] group-hover/link:text-white lg:h-11 lg:w-11">

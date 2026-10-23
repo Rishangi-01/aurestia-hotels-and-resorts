@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { blogArticleHeroContent } from "@/data";
 
 export default function BlogArticleHero() {
   const shouldReduceMotion = useReducedMotion();
@@ -45,11 +45,11 @@ export default function BlogArticleHero() {
             variants={fadeUp}
             className="font-serif text-[clamp(2.15rem,5.2vw,4.8rem)] font-normal leading-[1.08] tracking-[-0.045em] text-[#25140e]"
           >
-            The Ultimate Guide to a
+            {blogArticleHeroContent.headingFirst}
             <br className="hidden sm:block" />{" "}
-            Relaxing{" "}
+            {blogArticleHeroContent.headingSecond}{" "}
             <span className="text-[#bd853c]">
-              Beach Vacation
+              {blogArticleHeroContent.headingAccent}
             </span>
           </motion.h1>
 
@@ -57,9 +57,7 @@ export default function BlogArticleHero() {
             variants={fadeUp}
             className="mt-4 max-w-3xl text-sm leading-7 text-[#77716d] sm:mt-5 sm:text-base sm:leading-8 lg:text-lg"
           >
-            Discover tips and ideas to make the most of your
-            beach getaway, from the best activities to
-            unforgettable experiences.
+            {blogArticleHeroContent.description}
           </motion.p>
         </motion.div>
 
@@ -85,8 +83,8 @@ export default function BlogArticleHero() {
           className="group relative isolate h-[280px] overflow-hidden rounded-sm bg-[#e8d6be] sm:h-[380px] md:h-[460px] lg:h-[min(39vw,590px)] lg:min-h-[440px]"
         >
           <Image
-            src="/images/home/ocean-view-suite.png"
-            alt="Luxury beachfront resort terrace overlooking the ocean at sunset"
+            src={blogArticleHeroContent.image}
+            alt={blogArticleHeroContent.imageAlt}
             fill
             priority
             sizes="100vw"

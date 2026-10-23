@@ -2,77 +2,14 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { FiStar } from "react-icons/fi";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
-
-type Review = {
-  name: string;
-  location: string;
-  review: string;
-};
-
-const reviews: Review[] = [
-  {
-    name: "Priya Mehta",
-    location: "Mumbai, India",
-    review:
-      "Aurestia made our vacation truly special. The rooms were luxurious, the staff was incredibly warm, and every detail was perfect.",
-  },
-  {
-    name: "Rahul Sharma",
-    location: "Bangalore, India",
-    review:
-      "An amazing experience from start to finish. The beachfront location, delicious food, and serene atmosphere made our stay unforgettable.",
-  },
-  {
-    name: "Anjali Verma",
-    location: "Delhi, India",
-    review:
-      "Exceptional hospitality and world-class facilities. Aurestia is the perfect blend of luxury and comfort. We can't wait to come back!",
-  },
-  {
-    name: "Priya Mehta",
-    location: "Mumbai, India",
-    review:
-      "Aurestia made our vacation truly special. The rooms were luxurious, the staff was incredibly warm, and every detail was perfect.",
-  },
-  {
-    name: "Rahul Sharma",
-    location: "Bangalore, India",
-    review:
-      "An amazing experience from start to finish. The beachfront location, delicious food, and serene atmosphere made our stay unforgettable.",
-  },
-  {
-    name: "Anjali Verma",
-    location: "Delhi, India",
-    review:
-      "Exceptional hospitality and world-class facilities. Aurestia is the perfect blend of luxury and comfort. We can't wait to come back!",
-  },
-  {
-    name: "Priya Mehta",
-    location: "Mumbai, India",
-    review:
-      "Aurestia made our vacation truly special. The rooms were luxurious, the staff was incredibly warm, and every detail was perfect.",
-  },
-  {
-    name: "Rahul Sharma",
-    location: "Bangalore, India",
-    review:
-      "An amazing experience from start to finish. The beachfront location, delicious food, and serene atmosphere made our stay unforgettable.",
-  },
-  {
-    name: "Anjali Verma",
-    location: "Delhi, India",
-    review:
-      "Exceptional hospitality and world-class facilities. Aurestia is the perfect blend of luxury and comfort. We can't wait to come back!",
-  },
-];
+import { testimonialsGridContent } from "@/data";
 
 function ReviewCard({
   review,
   index,
 }: {
-  review: Review;
+  review: (typeof testimonialsGridContent.reviews)[number];
   index: number;
 }) {
   const reduceMotion = useReducedMotion();
@@ -131,7 +68,7 @@ function ReviewCard({
 
         <div
           className="flex shrink-0 items-center gap-0.5 pb-1 text-[#c58a2c]"
-          aria-label="5 out of 5 stars"
+          aria-label={testimonialsGridContent.ratingLabel}
         >
           {Array.from({ length: 5 }).map((_, starIndex) => (
             <FaStar key={starIndex} size={14} aria-hidden="true" />
@@ -147,7 +84,7 @@ export default function TestimonialsGrid() {
 
   return (
     <section
-      id="guest-reviews"
+      id={testimonialsGridContent.id}
       className="relative overflow-hidden bg-[#fcfaf6] px-5 py-16 sm:px-8 sm:py-16 lg:px-12 lg:py-16"
     >
       {/* Soft luxury background glow */}
@@ -174,22 +111,24 @@ export default function TestimonialsGrid() {
           />
 
           <p className="text-[10px] font-medium tracking-[0.23em] text-[#b78342] sm:text-xs sm:tracking-[0.28em]">
-            VOICE FROM OUR GUESTS
+            {testimonialsGridContent.eyebrow}
           </p>
 
           <h2 className="mt-2 font-serif text-4xl leading-tight tracking-[-0.035em] text-[#2e1912] sm:text-5xl md:text-[56px]">
-            Testi<span className="text-[#b78342]">monials</span>
+            {testimonialsGridContent.headingFirst}
+            <span className="text-[#b78342]">
+              {testimonialsGridContent.headingAccent}
+            </span>
           </h2>
 
           <p className="mx-auto mt-3 max-w-lg text-sm leading-6 text-[#81736a] sm:text-[15px]">
-            Real stories from our guests who have experienced the comfort,
-            elegance, and warm hospitality at Aurestia.
+            {testimonialsGridContent.description}
           </p>
         </motion.header>
 
         {/* Responsive reviews grid */}
         <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {reviews.map((review, index) => (
+          {testimonialsGridContent.reviews.map((review, index) => (
             <ReviewCard
               key={`${review.name}-${index}`}
               review={review}

@@ -3,13 +3,14 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { testimonialBannerContent } from "@/data";
 
 export default function TestimonialBanner() {
   const reduceMotion = useReducedMotion();
 
   return (
     <section
-      aria-labelledby="testimonial-banner-title"
+      aria-labelledby={testimonialBannerContent.ariaLabelledBy}
       className="group relative flex min-h-[320px] w-full items-center justify-center overflow-hidden bg-[#241a15] sm:min-h-[380px] lg:min-h-[480px] xl:min-h-[410px]"
     >
       <motion.div
@@ -24,7 +25,7 @@ export default function TestimonialBanner() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[2000ms] group-hover:scale-[1.025]"
           style={{
-            backgroundImage: "url('/images/banner.png')",
+            backgroundImage: `url('${testimonialBannerContent.image}')`,
           }}
         />
       </motion.div>
@@ -34,7 +35,7 @@ export default function TestimonialBanner() {
 
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-5 py-16 text-center sm:px-8 sm:py-20 lg:py-24">
         <motion.h1
-          id="testimonial-banner-title"
+          id={testimonialBannerContent.titleId}
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -44,11 +45,11 @@ export default function TestimonialBanner() {
           }}
           className="font-serif text-4xl font-normal uppercase leading-tight tracking-[0.015em] text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-[64px]"
         >
-          Testimonials
+          {testimonialBannerContent.title}
         </motion.h1>
 
         <motion.nav
-          aria-label="Breadcrumb"
+          aria-label={testimonialBannerContent.breadcrumbLabel}
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -60,22 +61,22 @@ export default function TestimonialBanner() {
           <ol className="flex flex-wrap items-center justify-center gap-2.5 text-sm text-white/80 sm:gap-3 sm:text-base md:text-lg">
             <li>
               <Link
-                href="/"
+                href={testimonialBannerContent.homeHref}
                 className="inline-flex items-center gap-2 transition-colors duration-300 hover:text-[#e2b778]"
               >
-                Home
+                {testimonialBannerContent.homeLabel}
               </Link>
             </li>
 
             <li aria-hidden="true">
-              /
+              {testimonialBannerContent.breadcrumbSeparator}
             </li>
 
             <li
               aria-current="page"
               className="text-white transition-colors duration-300"
             >
-              Testimonials
+              {testimonialBannerContent.currentPage}
             </li>
           </ol>
         </motion.nav>

@@ -11,34 +11,14 @@ import {
   ArrowRight,
   ChevronDown,
 } from "lucide-react";
+import { contactSectionContent } from "@/data";
 
-const contactDetails = [
-  {
-    icon: Phone,
-    title: "Call Us",
-    lines: ["+1 000000000"],
-    href: "tel:+1 000000000",
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    lines: ["info@xyz.com"],
-    href: "mailto:info@xyz.com",
-  },
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    lines: [
-      "123 Design Avenue,",
-      "New York, NY 10001, USA",
-    ],
-  },
-  {
-    icon: Clock3,
-    title: "Office Hours",
-    lines: ["Mon - Sat, 9:00 AM - 6:00 PM", "Sunday: Closed"],
-  },
-];
+const contactIcons: Record<string, typeof Phone> = {
+  phone: Phone,
+  mail: Mail,
+  mapPin: MapPin,
+  clock: Clock3,
+};
 
 const fieldClass =
   "w-full rounded-[4px] border border-[#e6e5e2] bg-white px-3 py-[11px] text-[12px] text-[#202428] outline-none transition-all duration-300 placeholder:text-[#89909a] hover:border-[#d9b17e] focus:border-[#c88b43] focus:ring-2 focus:ring-[#c88b43]/10 lg:text-[14px]";
@@ -73,8 +53,8 @@ export default function ContactSection() {
 
   return (
     <section
-      id="contact"
-      aria-labelledby="contact-heading"
+      id={contactSectionContent.id}
+      aria-labelledby={contactSectionContent.headingId}
       className="relative isolate overflow-hidden bg-[#fffdfa] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
     >
       {/* Subtle background accents */}
@@ -96,25 +76,23 @@ export default function ContactSection() {
           <div className="mb-3 flex items-center justify-center gap-3">
             <span className="h-px w-7 bg-[#cb8b43]" />
             <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#c98639] sm:text-[11px]">
-              Contact Us
+              {contactSectionContent.eyebrow}
             </span>
             <span className="h-px w-7 bg-[#cb8b43]" />
           </div>
 
           <h1
-            id="contact-heading"
+            id={contactSectionContent.headingId}
             className="font-serif text-[36px] font-medium leading-[1.1] tracking-[-1.3px] text-[#161b1f] sm:text-5xl lg:text-[54px]"
           >
-            We’d Love to
+            {contactSectionContent.headingFirst}
             <span className="mt-1 block text-[#c98b43]">
-              Hear From You
+              {contactSectionContent.headingAccent}
             </span>
           </h1>
 
           <p className="mx-auto mt-4 max-w-xl text-[13px] leading-[1.75] text-[#78818d] sm:text-[14px]">
-            Whether you have a question, need travel assistance,
-            or want a customized recommendation, our team is here
-            to help you.
+            {contactSectionContent.description}
           </p>
         </motion.div>
 
@@ -123,29 +101,28 @@ export default function ContactSection() {
           {/* Contact information */}
           <motion.aside
             {...entrance(0.1)}
-            aria-labelledby="get-in-touch-heading"
+            aria-labelledby={contactSectionContent.informationHeadingId}
             className="rounded-[3px] border border-[#f1ece5] bg-[#fcf7ec] p-5 sm:p-7 lg:p-8"
           >
             <div className="mb-7">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <h2
-                  id="get-in-touch-heading"
+                  id={contactSectionContent.informationHeadingId}
                   className="font-serif text-[26px] font-semibold tracking-[-0.7px] text-[#171c20] sm:text-[30px] lg:text-[2.2rem]"
                 >
-                  Get in Touch
+                  {contactSectionContent.informationHeading}
                 </h2>
                 <span className="h-[2px] w-10 bg-[#c98b43]" />
               </div>
 
               <p className="mt-2 max-w-sm text-[13px] leading-[1.7] text-[#78818d] lg:text-[16px]">
-                Reach out to us through the details below.
-                Our team will be happy to assist you.
+                {contactSectionContent.informationDescription}
               </p>
             </div>
 
             <div className="space-y-6 sm:space-y-7 lg:space-y-8">
-              {contactDetails.map((item, index) => {
-                const Icon = item.icon;
+              {contactSectionContent.details.map((item, index) => {
+                const Icon = contactIcons[item.icon];
 
                 return (
                   <motion.div
@@ -216,13 +193,13 @@ export default function ContactSection() {
             <div className="mb-5">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <h2 className="font-serif text-[26px] font-semibold tracking-[-0.7px] text-[#171c20] sm:text-[30px] lg:text-[2.2rem]">
-                  Send Us a Message
+                  {contactSectionContent.formHeading}
                 </h2>
                 <span className="h-[2px] w-9 bg-[#c98b43]" />
               </div>
 
               <p className="mt-2 text-[12px] leading-[1.7] text-[#78818d] sm:text-[13px] lg:text-[16px]">
-                Fill in your details and we will get back to you shortly.
+                {contactSectionContent.formDescription}
               </p>
             </div>
 
@@ -237,14 +214,17 @@ export default function ContactSection() {
                   htmlFor="contact-name"
                   className="mb-1.5 block text-[11px] font-medium text-[#292d30] text-[16px]"
                 >
-                  Full Name <span aria-hidden="true">*</span>
+                  {contactSectionContent.fields.name.label}{" "}
+                  <span aria-hidden="true">
+                    {contactSectionContent.fields.name.requiredIndicator}
+                  </span>
                 </label>
                 <input
                   id="contact-name"
                   name="name"
                   type="text"
                   autoComplete="name"
-                  placeholder="Enter your full name"
+                  placeholder={contactSectionContent.fields.name.placeholder}
                   required
                   minLength={2}
                   className={fieldClass}
@@ -257,14 +237,17 @@ export default function ContactSection() {
                   htmlFor="contact-email"
                   className="mb-1.5 block text-[11px] font-medium text-[#292d30] text-[16px]"
                 >
-                  Email Address <span aria-hidden="true">*</span>
+                  {contactSectionContent.fields.email.label}{" "}
+                  <span aria-hidden="true">
+                    {contactSectionContent.fields.email.requiredIndicator}
+                  </span>
                 </label>
                 <input
                   id="contact-email"
                   name="email"
                   type="email"
                   autoComplete="email"
-                  placeholder="Enter your email address"
+                  placeholder={contactSectionContent.fields.email.placeholder}
                   required
                   className={fieldClass}
                 />
@@ -276,16 +259,19 @@ export default function ContactSection() {
                   htmlFor="contact-phone"
                   className="mb-1.5 block text-[11px] font-medium text-[#292d30] text-[16px]"
                 >
-                  Phone Number <span aria-hidden="true">*</span>
+                  {contactSectionContent.fields.phone.label}{" "}
+                  <span aria-hidden="true">
+                    {contactSectionContent.fields.phone.requiredIndicator}
+                  </span>
                 </label>
                 <input
                   id="contact-phone"
                   name="phone"
                   type="tel"
                   autoComplete="tel"
-                  placeholder="Enter your phone number"
+                  placeholder={contactSectionContent.fields.phone.placeholder}
                   pattern="[+]?[0-9 ()-]{7,20}"
-                  title="Please enter a valid phone number."
+                  title={contactSectionContent.fields.phone.invalidMessage}
                   required
                   className={fieldClass}
                 />
@@ -297,7 +283,10 @@ export default function ContactSection() {
                   htmlFor="contact-subject"
                   className="mb-1.5 block text-[11px] font-medium text-[#292d30] text-[16px]"
                 >
-                  Subject <span aria-hidden="true">*</span>
+                  {contactSectionContent.fields.subject.label}{" "}
+                  <span aria-hidden="true">
+                    {contactSectionContent.fields.subject.requiredIndicator}
+                  </span>
                 </label>
 
                 <div className="relative">
@@ -309,19 +298,13 @@ export default function ContactSection() {
                     className={`${fieldClass} appearance-none pr-10`}
                   >
                     <option value="" disabled>
-                      Select a subject
+                      {contactSectionContent.fields.subject.placeholder}
                     </option>
-                    <option value="travel-enquiry">
-                      Travel Enquiry
-                    </option>
-                    <option value="booking">
-                      Booking Assistance
-                    </option>
-                    <option value="custom-package">
-                      Custom Travel Package
-                    </option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Other</option>
+                    {contactSectionContent.fields.subject.options.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
                   </select>
 
                   <ChevronDown
@@ -338,14 +321,14 @@ export default function ContactSection() {
                   htmlFor="contact-message"
                   className="mb-1.5 block text-[11px] font-medium text-[#292d30] text-[16px]"
                 >
-                  Your Message (Optional)
+                  {contactSectionContent.fields.message.label}
                 </label>
                 <textarea
                   id="contact-message"
                   name="message"
                   rows={4}
                   maxLength={2000}
-                  placeholder="Write your message here..."
+                  placeholder={contactSectionContent.fields.message.placeholder}
                   className={`${fieldClass} min-h-[96px] resize-y sm:min-h-[108px]`}
                 />
               </div>
@@ -361,7 +344,9 @@ export default function ContactSection() {
                 whileTap={reduceMotion ? undefined : { scale: 0.99 }}
                 className="group flex w-full items-center justify-center gap-2 rounded-[3px] bg-gradient-to-r from-[#ca8b40] to-[#bf7e32] px-5 py-3.5 font-serif text-[14px] font-medium text-white shadow-[0_3px_10px_rgba(190,125,50,0.10)] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98b43] focus-visible:ring-offset-2 lg:text-[16px]"
               >
-                {submitted ? "Message Ready" : "Send Message"}
+                {submitted
+                  ? contactSectionContent.submittedLabel
+                  : contactSectionContent.submitLabel}
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 group-hover:translate-x-1"
@@ -373,8 +358,7 @@ export default function ContactSection() {
                   role="status"
                   className="text-center text-xs leading-5 text-[#587b52]"
                 >
-                  Your details are valid. Connect the form to your
-                  backend to send your message.
+                  {contactSectionContent.successMessage}
                 </p>
               )}
             </form>
