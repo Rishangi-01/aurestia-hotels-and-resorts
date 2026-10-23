@@ -214,7 +214,6 @@ export default function EnquirySection() {
                   name="travelDate"
                   type="date"
                   aria-label="Travel date"
-                  min={new Date().toLocaleDateString("en-CA")}
                   className={`${inputClass} [color-scheme:light]`}
                 />
               </motion.div>
