@@ -33,7 +33,7 @@ export default function AboutUs() {
   return (
     <section
       id={aboutUsContent.id}
-      className="relative overflow-hidden bg-[white] px-5 py-16 sm:px-8 sm:py-16 lg:px-12 lg:py-16 xl:px-8"
+      className="relative overflow-hidden bg-[white] px-5 py-5 sm:px-8 sm:py-16 lg:px-12 lg:py-16 xl:px-8"
     >
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 items-center gap-12 lg:grid-cols-[0.96fr_1.04fr] lg:gap-12 xl:gap-16">
         <div className="order-2 lg:order-1">

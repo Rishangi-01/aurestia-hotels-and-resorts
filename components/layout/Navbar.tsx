@@ -29,7 +29,7 @@ export default function Navbar() {
           className="group shrink-0"
           aria-label={navbarContent.logo.ariaLabel}
         >
-          <div className="flex flex-col items-center h-[75px]">
+          <div className="flex flex-col items-center lg:h-[75px] h-[45px]">
             <img src={navbarContent.logo.src} alt={navbarContent.logo.alt} className="h-full w-full" />
           </div>
         </Link>

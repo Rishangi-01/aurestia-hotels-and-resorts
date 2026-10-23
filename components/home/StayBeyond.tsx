@@ -24,7 +24,7 @@ export default function StayBeyond() {
   return (
     <section
       id={stayBeyondContent.id}
-      className="relative overflow-hidden bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-8 lg:pt-24 lg:pb-8"
+      className="relative overflow-hidden bg-white px-5 pb-8 pt-6 sm:px-8 sm:py-8 lg:px-8 lg:pt-24 lg:pb-8"
     >
       <div className="mx-auto max-w-[1600px]">
         <motion.h2

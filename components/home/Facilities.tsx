@@ -15,7 +15,7 @@ export default function Facilities() {
   return (
     <section
       id={facilitiesContent.id}
-      className="overflow-hidden bg-white py-8 sm:py-8 lg:py-12"
+      className="overflow-hidden bg-white py-3 sm:py-8 lg:py-12"
     >
       <div className="grid min-h-[650px] grid-cols-1 lg:min-h-[720px] lg:grid-cols-2">
         <motion.div

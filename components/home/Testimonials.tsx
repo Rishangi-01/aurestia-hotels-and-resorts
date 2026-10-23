@@ -39,7 +39,7 @@ export default function Testimonials() {
     <section
       id={testimonialsContent.id}
       aria-label={testimonialsContent.sectionLabel}
-      className="relative overflow-hidden bg-[#faf7f1] px-5 py-8 sm:px-10 sm:py-8 lg:min-h-[570px] lg:px-16 lg:py-12 w-[100%]"
+      className="relative overflow-hidden bg-[#faf7f1] px-5 py-5 sm:px-10 sm:py-8 lg:min-h-[570px] lg:px-16 lg:py-12 w-[100%]"
     >
       <div
         aria-hidden="true"

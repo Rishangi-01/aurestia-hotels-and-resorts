@@ -93,7 +93,7 @@ export default function RoomsHero() {
     <section
       id={roomsHeroContent.id}
       aria-label={roomsHeroContent.ariaLabel}
-      className="overflow-hidden bg-white px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-16 xl:px-14 w-[100%]"
+      className="overflow-hidden bg-white px-5 py-6 sm:px-8 sm:py-16 lg:px-12 lg:py-16 xl:px-14 w-[100%]"
     >
       <div className="mx-auto">
         <div className="mb-9 flex flex-col justify-between gap-6 sm:mb-12 md:flex-row md:items-center lg:mb-14">
