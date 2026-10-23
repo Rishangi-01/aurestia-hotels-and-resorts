@@ -10,7 +10,7 @@
       { "name": "HOME", "href": "/" },
       { "name": "ABOUT US", "href": "/about" },
       { "name": "ROOMS & SUITS", "href": "/rooms" },
-      { "name": "Blog", "href": "/blog" },
+      { "name": "BLOG", "href": "/blog" },
       { "name": "TESTIMONIALS", "href": "/testimonials" },
       { "name": "CONTACT US", "href": "/contact" }
     ],
@@ -36,7 +36,7 @@
       { "label": "Home", "href": "/" },
       { "label": "About Us", "href": "/about" },
       { "label": "Rooms & Suites", "href": "/rooms" },
-      { "label": "BLOG", "href": "/blog" },
+      { "label": "Blog", "href": "/blog" },
       { "label": "Testimonials", "href": "/testimonials" },
       { "label": "Enquire Now", "href": "/enquire-now" },
       { "label": "Contact Us", "href": "/contact" }
