@@ -10,13 +10,13 @@
       { "name": "HOME", "href": "/" },
       { "name": "ABOUT US", "href": "/about" },
       { "name": "ROOMS & SUITS", "href": "/rooms" },
-      { "name": "GALLERY", "href": "/gallery" },
+      { "name": "Blog", "href": "/blog" },
       { "name": "TESTIMONIALS", "href": "/testimonials" },
       { "name": "CONTACT US", "href": "/contact" }
     ],
     "enquireCta": {
       "label": "ENQUIRE NOW",
-      "href": "#contact"
+      "href": "/enquire-now"
     },
     "menu": {
       "openLabel": "Open menu",
@@ -45,17 +45,17 @@
     "contact": {
       "addressLines": [
         "Aurestia Hotels & Resorts",
-        "Beachfront Avenue, Kalpitiya,",
-        "Sri Lanka 61360"
+        "123 Design Avenue,",
+        "New York, NY 10001, USA"
       ],
       "phoneLabel": "PHONE",
-      "phoneHref": "tel:+94771234567",
-      "phone": "+94 77 123 4567",
+      "phoneHref": "tel:+1 000000000",
+      "phone": "+1 000000000",
       "emailLabel": "EMAIL",
-      "emailHref": "mailto:hello@aurestiaresorts.com",
-      "email": "hello@aurestiaresorts.com"
+      "emailHref": "mailto:info@xyz.com",
+      "email": "info@xyz.com"
     },
-    "copyright": "© 2026 Aurestia Hotels & Resorts. All Rights Reserved."
+    "copyright": "Copyright © 2026. All Rights Reserved. Powered By Lestow."
   },
   "aboutUs": {
     "id": "about",
