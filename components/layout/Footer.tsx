@@ -37,7 +37,6 @@ export default function Footer() {
       {/* Main footer */}
       <div className="mx-auto max-w-[1600px] px-6 py-6 sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-12 lg:grid-cols-[1.35fr_1fr_1.15fr] lg:gap-0">
-          {/* Brand / Logo */}
           <motion.div
             {...reveal(0)}
             className="flex lg:min-h-[200px] min-h-[100px] items-center justify-center md:col-span-2 lg:col-span-1 lg:justify-start lg:pr-10"

@@ -80,15 +80,15 @@
     },
     "images": [
       {
-        "src": "/images/home/about-pool.png",
+        "src": "/images/home/about-pool.webp",
         "alt": "Luxury infinity pool overlooking a Mediterranean coastline"
       },
       {
-        "src": "/images/home/about-terrace.png",
+        "src": "/images/home/about-terrace.webp",
         "alt": "Private resort terrace with elegant outdoor seating and sea views"
       },
       {
-        "src": "/images/home/about-bedroom.png",
+        "src": "/images/home/about-bedroom.webp",
         "alt": "Elegant hotel bedroom with warm lighting and a panoramic sea view"
       }
     ]
@@ -106,7 +106,7 @@
         "tab": "Infinity Pool",
         "title": "Infinity Pool",
         "description": "Immerse yourself in tranquil waters and breathtaking ocean views. Experience unforgettable sunsets in our luxurious infinity pool.",
-        "image": "/images/home/facilities-pool.png",
+        "image": "/images/home/facilities-pool.webp",
         "imageAlt": "Luxury infinity pool overlooking the ocean at sunset",
         "badge": "RELAX & UNWIND"
       },
@@ -115,7 +115,7 @@
         "tab": "Spa & Wellness",
         "title": "Spa & Wellness",
         "description": "Restore your mind and body with rejuvenating treatments, calming surroundings and thoughtfully curated wellness experiences.",
-        "image": "/images/home/facilities-spa.png",
+        "image": "/images/home/facilities-spa.webp",
         "imageAlt": "Peaceful luxury spa and wellness retreat",
         "badge": "RENEW YOURSELF"
       },
@@ -124,7 +124,7 @@
         "tab": "Fitness Center",
         "title": "Fitness Center",
         "description": "Stay active during your vacation in our state-of-the-art gym equipped with the latest machines.",
-        "image": "/images/home/about-pool.png",
+        "image": "/images/home/about-pool.webp",
         "imageAlt": "Modern luxury hotel gym with premium fitness equipment",
         "badge": "STAY ACTIVE"
       }
@@ -150,7 +150,7 @@
       {
         "id": 1,
         "name": "Ocean View Suite",
-        "image": "/images/home/ocean-view-suite.png",
+        "image": "/images/home/ocean-view-suite.webp",
         "area": "55 M²",
         "adults": 2,
         "children": 1,
@@ -159,7 +159,7 @@
       {
         "id": 2,
         "name": "Deluxe Room",
-        "image": "/images/home/deluxe-room.png",
+        "image": "/images/home/deluxe-room.webp",
         "area": "38 M²",
         "adults": 2,
         "children": 1,
@@ -168,7 +168,7 @@
       {
         "id": 3,
         "name": "Presidential Suite",
-        "image": "/images/home/about-bedroom.png",
+        "image": "/images/home/about-bedroom.webp",
         "area": "85 M²",
         "adults": 3,
         "children": 2,
@@ -177,7 +177,7 @@
       {
         "id": 4,
         "name": "Garden View Room",
-        "image": "/images/home/about-terrace.png",
+        "image": "/images/home/about-terrace.webp",
         "area": "42 M²",
         "adults": 2,
         "children": 1,
@@ -186,7 +186,7 @@
       {
         "id": 5,
         "name": "Premium Suite",
-        "image": "/images/home/deluxe-room.png",
+        "image": "/images/home/deluxe-room.webp",
         "area": "68 M²",
         "adults": 2,
         "children": 2,
@@ -201,15 +201,15 @@
     "description": "Discover serene escapes, luxurious stays and unforgettable experiences in the heart of nature.",
     "images": [
       {
-        "src": "/images/home/resort-terrace.png",
+        "src": "/images/home/resort-terrace.webp",
         "alt": "Luxury resort terrace overlooking the sea"
       },
       {
-        "src": "/images/home/resort-pool.png",
+        "src": "/images/home/resort-pool.webp",
         "alt": "Infinity pool at a luxury seaside resort"
       },
       {
-        "src": "/images/home/resort-arch.png",
+        "src": "/images/home/resort-arch.webp",
         "alt": "Elegant stone archway at a Mediterranean resort"
       }
     ]
@@ -248,7 +248,7 @@
     "titleId": "about-banner-title",
     "ariaLabelledBy": "about-banner-title",
     "title": "About Us",
-    "image": "/images/banner.png",
+    "image": "/images/banner.webp",
     "breadcrumbLabel": "Breadcrumb",
     "homeLabel": "Home",
     "homeHref": "/",
@@ -258,7 +258,7 @@
     "titleId": "rooms-banner-title",
     "ariaLabelledBy": "rooms-banner-title",
     "title": "Rooms & Suits",
-    "image": "/images/banner.png",
+    "image": "/images/banner.webp",
     "breadcrumbLabel": "Breadcrumb",
     "homeLabel": "Home",
     "homeHref": "/",
@@ -276,7 +276,7 @@
     "items": [
       {
         "name": "Ocean View Suite",
-        "image": "/images/home/deluxe-room.png",
+        "image": "/images/home/deluxe-room.webp",
         "area": "55 M²",
         "adults": 2,
         "children": 1,
@@ -284,7 +284,7 @@
       },
       {
         "name": "Deluxe Room",
-        "image": "/images/home/about-terrace.png",
+        "image": "/images/home/about-terrace.webp",
         "area": "38 M²",
         "adults": 2,
         "children": 1,
@@ -292,7 +292,7 @@
       },
       {
         "name": "Ocean View Suite",
-        "image": "/images/home/about-bedroom.png",
+        "image": "/images/home/about-bedroom.webp",
         "area": "55 M²",
         "adults": 2,
         "children": 1,
@@ -300,7 +300,7 @@
       },
       {
         "name": "Deluxe Room",
-        "image": "/images/home/ocean-view-suite.png",
+        "image": "/images/home/ocean-view-suite.webp",
         "area": "38 M²",
         "adults": 2,
         "children": 1,
@@ -347,22 +347,22 @@
     "galleryCount": 4,
     "gallery": [
       {
-        "src": "/images/home/ocean-view-suite.png",
+        "src": "/images/home/ocean-view-suite.webp",
         "alt": "Luxury king bedroom overlooking the ocean",
         "label": "Bedroom"
       },
       {
-        "src": "/images/home/about-bedroom.png",
+        "src": "/images/home/about-bedroom.webp",
         "alt": "Private balcony with panoramic ocean views",
         "label": "Ocean Balcony"
       },
       {
-        "src": "/images/home/resort-terrace.png",
+        "src": "/images/home/resort-terrace.webp",
         "alt": "Luxury marble bathroom with freestanding bathtub",
         "label": "Bathroom"
       },
       {
-        "src": "/images/home/about-terrace.png",
+        "src": "/images/home/about-terrace.webp",
         "alt": "Elegant living area with ocean views",
         "label": "Living Area"
       }
@@ -378,7 +378,7 @@
     "titleId": "rooms-details-banner-title",
     "ariaLabelledBy": "rooms-details-banner-title",
     "title": "Rooms & Suits Detail",
-    "image": "/images/banner.png",
+    "image": "/images/banner.webp",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbSeparator": "/",
     "homeLabel": "Home",
@@ -389,7 +389,7 @@
     "titleId": "testimonial-banner-title",
     "ariaLabelledBy": "testimonial-banner-title",
     "title": "Testimonials",
-    "image": "/images/banner.png",
+    "image": "/images/banner.webp",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbSeparator": "/",
     "homeLabel": "Home",
@@ -455,7 +455,7 @@
     "titleId": "blog-banner-title",
     "ariaLabelledBy": "blog-banner-title",
     "title": "Blogs",
-    "image": "/images/banner.png",
+    "image": "/images/banner.webp",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbSeparator": "/",
     "homeLabel": "Home",
@@ -475,7 +475,7 @@
         "date": "12 AUG 2026",
         "title": "The Ultimate Guide to a Relaxing Beach Vacation",
         "description": "Discover top tips and ideas to make the most of your beach getaway, from the best activities to unforgettable experiences.",
-        "image": "/images/home/about-bedroom.png",
+        "image": "/images/home/about-bedroom.webp",
         "alt": "Luxury beachfront resort terrace overlooking the ocean at sunset",
         "href": "/blog/blog-details"
       },
@@ -483,7 +483,7 @@
         "date": "05 AUG 2026",
         "title": "How to Choose the Perfect Room for Your Stay",
         "description": "Explore different room types and find the ideal stay option that matches your travel style and comfort needs.",
-        "image": "/images/home/about-terrace.png",
+        "image": "/images/home/about-terrace.webp",
         "alt": "Elegant luxury hotel bedroom with a beautiful ocean view",
         "href": "/blog/blog-details"
       },
@@ -491,7 +491,7 @@
         "date": "28 JUL 2026",
         "title": "Wellness Retreats: Reconnect with Mind and Body",
         "description": "Learn how a wellness retreat can help you recharge, reduce stress, and bring balance to your everyday life.",
-        "image": "/images/home/deluxe-room.png",
+        "image": "/images/home/deluxe-room.webp",
         "alt": "Rolled white spa towels and flowers in a peaceful luxury resort",
         "href": "/blog/blog-details"
       },
@@ -499,7 +499,7 @@
         "date": "18 JUL 2026",
         "title": "Discover the Art of Luxury Resort Living",
         "description": "Discover thoughtful details, beautiful surroundings, and exceptional hospitality that make every stay special.",
-        "image": "/images/home/facilities-spa.png",
+        "image": "/images/home/facilities-spa.webp",
         "alt": "Elegant outdoor lounge at a luxury resort",
         "href": "/blog/blog-details"
       },
@@ -507,7 +507,7 @@
         "date": "10 JUL 2026",
         "title": "A Food Lover's Guide to Coastal Dining",
         "description": "Explore memorable dining experiences, fresh local flavors, and beautiful settings for your next getaway.",
-        "image": "/images/home/ocean-view-suite.png",
+        "image": "/images/home/ocean-view-suite.webp",
         "alt": "Beautifully presented dining experience at a coastal resort",
         "href": "/blog/blog-details"
       },
@@ -515,7 +515,7 @@
         "date": "02 JUL 2026",
         "title": "Slow Travel: Make Every Moment Count",
         "description": "Take a slower approach to travel and enjoy meaningful experiences, peaceful moments, and local discoveries.",
-        "image": "/images/home/resort-terrace.png",
+        "image": "/images/home/resort-terrace.webp",
         "alt": "Peaceful resort terrace surrounded by tropical greenery",
         "href": "/blog/blog-details"
       }
@@ -525,7 +525,7 @@
     "titleId": "blog-details-banner-title",
     "ariaLabelledBy": "blog-details-banner-title",
     "title": "Blogs Detail",
-    "image": "/images/banner.png",
+    "image": "/images/banner.webp",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbSeparator": "/",
     "homeLabel": "Home",
@@ -538,25 +538,25 @@
       {
         "date": "05 AUG 2026",
         "title": "How to Choose the Perfect Room for Your Stay",
-        "image": "/images/home/deluxe-room.png",
+        "image": "/images/home/deluxe-room.webp",
         "href": "/blog/choose-perfect-room"
       },
       {
         "date": "28 JUL 2026",
         "title": "Wellness Retreats: Reconnect with Mind and Body",
-        "image": "/images/home/resort-terrace.png",
+        "image": "/images/home/resort-terrace.webp",
         "href": "/blog/wellness-retreats"
       },
       {
         "date": "18 JUL 2026",
         "title": "A Food Lover's Guide to Resort Dining",
-        "image": "/images/home/about-bedroom.png",
+        "image": "/images/home/about-bedroom.webp",
         "href": "/blog/resort-dining"
       },
       {
         "date": "10 JUL 2026",
         "title": "Top 5 Beach Destinations for Your Next Getaway",
-        "image": "/images/home/about-terrace.png",
+        "image": "/images/home/about-terrace.webp",
         "href": "/blog/beach-destinations"
       }
     ],
@@ -567,11 +567,11 @@
         "description": "The first step to a perfect beach vacation is picking the right destination. Whether you prefer serene, secluded beaches or vibrant coastal towns, the right location sets the tone for your entire trip. Consider the kind of experience you're looking for — from tranquil escapes to lively beach atmospheres.",
         "images": [
           {
-            "src": "/images/home/deluxe-room.png",
+            "src": "/images/home/deluxe-room.webp",
             "alt": "Tropical beach with palm trees and turquoise water"
           },
           {
-            "src": "/images/home/facilities-spa.png",
+            "src": "/images/home/facilities-spa.webp",
             "alt": "Luxury resort infinity pool overlooking the ocean"
           }
         ]
@@ -581,7 +581,7 @@
         "title": "Plan Your Activities",
         "description": "From water sports and snorkeling to spa treatments and fine dining, beach destinations offer endless activities. Plan a mix of adventure and relaxation to make your trip truly memorable. Whether it's a sunrise beach walk, a snorkeling adventure, or a sunset dinner by the shore, there's always something special to experience.",
         "banner": {
-          "src": "/images/home/ocean-view-suite.png",
+          "src": "/images/home/ocean-view-suite.webp",
           "alt": "Luxury beachfront lounge at golden hour"
         }
       },
@@ -594,7 +594,7 @@
     "quote": "A beach vacation is not just a trip, it's a chance to reconnect with yourself, nature, and the beauty around you.",
     "readArticleLabel": "Read article",
     "promotion": {
-      "image": "/images/home/about-pool.png",
+      "image": "/images/home/about-pool.webp",
       "imageAlt": "Elegant ocean-view suite at Aurestia",
       "eyebrow": "Your next escape",
       "headingFirst": "Experience",
@@ -609,14 +609,14 @@
     "headingSecond": "Relaxing",
     "headingAccent": "Beach Vacation",
     "description": "Discover tips and ideas to make the most of your beach getaway, from the best activities to unforgettable experiences.",
-    "image": "/images/home/ocean-view-suite.png",
+    "image": "/images/home/ocean-view-suite.webp",
     "imageAlt": "Luxury beachfront resort terrace overlooking the ocean at sunset"
   },
   "enquireNowBanner": {
     "titleId": "enquire-now-banner-title",
     "ariaLabelledBy": "enquire-now-banner-title",
     "title": "Enquire Now",
-    "image": "/images/banner.png",
+    "image": "/images/banner.webp",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbSeparator": "/",
     "homeLabel": "Home",
@@ -700,7 +700,7 @@
     "titleId": "contact-banner-title",
     "ariaLabelledBy": "contact-banner-title",
     "title": "Contact Us",
-    "image": "/images/banner.png",
+    "image": "/images/banner.webp",
     "breadcrumbLabel": "Breadcrumb",
     "breadcrumbSeparator": "/",
     "homeLabel": "Home",
