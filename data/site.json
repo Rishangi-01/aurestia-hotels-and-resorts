@@ -36,7 +36,7 @@
       { "label": "Home", "href": "/" },
       { "label": "About Us", "href": "/about" },
       { "label": "Rooms & Suites", "href": "/rooms" },
-      { "label": "Blog", "href": "/blog" },
+      { "label": "BLOG", "href": "/blog" },
       { "label": "Testimonials", "href": "/testimonials" },
       { "label": "Enquire Now", "href": "/enquire-now" },
       { "label": "Contact Us", "href": "/contact" }
@@ -373,6 +373,18 @@
     "viewerLabel": "Room image viewer",
     "previousImageLabel": "Previous image",
     "nextImageLabel": "Next image"
+  },
+  "stayToRemember": {
+    "image": "/images/home/resort-terrace.webp",
+    "imageAlt": "Luxurious ocean-view resort terrace with elegant loungers and panoramic sea views",
+    "eyebrow": "A CLOSER LOOK",
+    "heading": "A Stay to Remember",
+    "description": "Unwind in a serene setting with panoramic ocean views, elegant design, and thoughtful amenities. Every detail is crafted to make your stay relaxing, comfortable, and truly special.",
+    "cta": {
+      "href": "/rooms",
+      "ariaLabel": "View all rooms and suites",
+      "label": "View All Rooms"
+    }
   },
   "roomsDetailsBanner": {
     "titleId": "rooms-details-banner-title",
