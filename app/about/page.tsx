@@ -1,7 +1,6 @@
 import AboutBanner from "@/components/about/AboutBanner";
 import AboutUs from "@/components/home/AboutUs";
 import Facilities from "@/components/home/Facilities";
-import Testimonials from "@/components/home/Testimonials";
 
 
 export default function About() {
@@ -10,7 +9,6 @@ export default function About() {
       <AboutBanner />
       <AboutUs />
       <Facilities />
-      <Testimonials />
     </div>
   );
 }

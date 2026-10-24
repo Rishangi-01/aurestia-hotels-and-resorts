@@ -253,7 +253,7 @@ export default function EnquirySection() {
                 type="submit"
                 whileHover={reduceMotion ? undefined : { y: -2 }}
                 whileTap={reduceMotion ? undefined : { scale: 0.99 }}
-                className="group flex w-full items-center justify-center gap-2 rounded-[3px] bg-gradient-to-r from-[#c98a40] to-[#bd7d32] px-5 py-3 text-[13px] font-medium text-white shadow-[0_4px_12px_rgba(190,125,50,0.12)] transition-shadow duration-300 hover:shadow-[0_7px_20px_rgba(190,125,50,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98b43] focus-visible:ring-offset-2"
+                className="group flex w-full items-center justify-center gap-2 rounded-[3px] bg-gradient-to-r from-[#c98a40] to-[#bd7d32] px-5 py-3.5 text-[14px] font-medium text-white shadow-[0_4px_12px_rgba(190,125,50,0.12)] transition-shadow duration-300 hover:shadow-[0_7px_20px_rgba(190,125,50,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98b43] focus-visible:ring-offset-2 lg:text-[16px]"
               >
                 {submitted
                   ? enquirySectionContent.submittedLabel

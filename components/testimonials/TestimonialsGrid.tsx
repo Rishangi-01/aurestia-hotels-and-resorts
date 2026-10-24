@@ -1,9 +1,12 @@
 
 "use client";
 
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import { testimonialsGridContent } from "@/data";
+
+const REVIEWS_PER_PAGE = 9;
 
 function ReviewCard({
   review,
@@ -81,13 +84,19 @@ function ReviewCard({
 
 export default function TestimonialsGrid() {
   const reduceMotion = useReducedMotion();
+  const [currentPage, setCurrentPage] = useState(1);
+  const reviews = testimonialsGridContent.reviews;
+  const pageCount = Math.ceil(reviews.length / REVIEWS_PER_PAGE);
+  const visibleReviews = reviews.slice(
+    (currentPage - 1) * REVIEWS_PER_PAGE,
+    currentPage * REVIEWS_PER_PAGE,
+  );
 
   return (
     <section
       id={testimonialsGridContent.id}
       className="relative overflow-hidden bg-[#fcfaf6] px-5 py-16 sm:px-8 sm:py-16 lg:px-12 lg:py-16"
     >
-      {/* Soft luxury background glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(195,148,83,0.07),_transparent_55%)]"
@@ -128,14 +137,58 @@ export default function TestimonialsGrid() {
 
         {/* Responsive reviews grid */}
         <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {testimonialsGridContent.reviews.map((review, index) => (
+          {visibleReviews.map((review, index) => (
             <ReviewCard
-              key={`${review.name}-${index}`}
+              key={`${review.name}-${(currentPage - 1) * REVIEWS_PER_PAGE + index}`}
               review={review}
               index={index}
             />
           ))}
         </div>
+
+        {pageCount > 1 && (
+          <nav
+            aria-label="Testimonials pagination"
+            className="mt-10 flex flex-wrap items-center justify-center gap-2"
+          >
+            <button
+              type="button"
+              onClick={() => setCurrentPage((page) => page - 1)}
+              disabled={currentPage === 1}
+              className="rounded-sm border border-[#d8c7ad] px-4 py-2 text-sm text-[#6e5540] transition-colors hover:border-[#b78342] hover:text-[#9a692f] disabled:cursor-not-allowed disabled:opacity-45"
+            >
+              Previous
+            </button>
+
+            {Array.from({ length: pageCount }, (_, index) => index + 1).map(
+              (page) => (
+                <button
+                  key={page}
+                  type="button"
+                  onClick={() => setCurrentPage(page)}
+                  aria-label={`Go to page ${page}`}
+                  aria-current={currentPage === page ? "page" : undefined}
+                  className={`flex h-10 min-w-10 items-center justify-center rounded-sm border px-3 text-sm transition-colors ${
+                    currentPage === page
+                      ? "border-[#b78342] bg-[#b78342] text-white"
+                      : "border-[#d8c7ad] text-[#6e5540] hover:border-[#b78342] hover:text-[#9a692f]"
+                  }`}
+                >
+                  {page}
+                </button>
+              ),
+            )}
+
+            <button
+              type="button"
+              onClick={() => setCurrentPage((page) => page + 1)}
+              disabled={currentPage === pageCount}
+              className="rounded-sm border border-[#d8c7ad] px-4 py-2 text-sm text-[#6e5540] transition-colors hover:border-[#b78342] hover:text-[#9a692f] disabled:cursor-not-allowed disabled:opacity-45"
+            >
+              Next
+            </button>
+          </nav>
+        )}
       </div>
     </section>
   );

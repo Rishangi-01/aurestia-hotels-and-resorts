@@ -103,9 +103,9 @@ export default function OceanViewSuite() {
               ...transition,
               delay: reduceMotion ? 0 : 0.15,
             }}
-            className="flex flex-col pt-1 lg:pt-6"
+            className="flex flex-col pt-1 lg:pt-6 my-auto"
           >
-            <div className="mb-4 flex items-center gap-4">
+            <div className="mb-2 flex items-center gap-4">
               <span className="text-xs font-medium tracking-[0.22em] text-[#bd854b] sm:text-sm">
                 {oceanViewSuiteContent.eyebrow}
               </span>
@@ -116,12 +116,12 @@ export default function OceanViewSuite() {
               {oceanViewSuiteContent.title}
             </h1>
 
-            <p className="mt-6 text-[14px] leading-[1.95] text-[#77716c] sm:text-[15px]">
+            <p className="mt-2 text-[14px] leading-[1.95] text-[#77716c] sm:text-[15px]">
               {oceanViewSuiteContent.description}
             </p>
 
             {/* Feature highlights */}
-            <div className="mt-8 grid grid-cols-3 items-center border-b-2 border-[#e5d4bf] pb-7">
+            <div className="mt-3 grid grid-cols-3 items-center border-b-2 border-[#e5d4bf] pb-4">
               <div className="flex items-center gap-2 sm:gap-3">
                 <House className="shrink-0 text-[#bd854b]" size={24} strokeWidth={1.7} />
                 <div>
@@ -148,7 +148,7 @@ export default function OceanViewSuite() {
             </div>
 
             {/* Room details */}
-            <div className="space-y-0 border-b-2 border-[#e5d4bf] py-4">
+            <div className="space-y-0 border-b-2 border-[#e5d4bf] py-3">
               {oceanViewSuiteContent.details.map((detail, index) => (
                 <motion.div
                   key={detail.label}
@@ -158,7 +158,7 @@ export default function OceanViewSuite() {
                     ...transition,
                     delay: reduceMotion ? 0 : 0.2 + index * 0.08,
                   }}
-                  className="grid grid-cols-[0.85fr_1fr] gap-3 py-[9px] sm:grid-cols-2"
+                  className="grid grid-cols-[0.85fr_1fr] gap-3 py-[7px] sm:grid-cols-2"
                 >
                   <span className="text-xs font-medium tracking-[0.13em] text-[#bd854b] sm:text-sm">
                     {detail.label}

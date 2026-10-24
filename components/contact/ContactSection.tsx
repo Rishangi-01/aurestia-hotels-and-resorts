@@ -342,7 +342,7 @@ export default function ContactSection() {
                     : { y: -2, boxShadow: "0 8px 20px rgba(190,125,50,0.22)" }
                 }
                 whileTap={reduceMotion ? undefined : { scale: 0.99 }}
-                className="group flex w-full items-center justify-center gap-2 rounded-[3px] bg-gradient-to-r from-[#ca8b40] to-[#bf7e32] px-5 py-3.5 font-serif text-[14px] font-medium text-white shadow-[0_3px_10px_rgba(190,125,50,0.10)] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98b43] focus-visible:ring-offset-2 lg:text-[16px]"
+                className="group flex w-full items-center justify-center gap-2 rounded-[3px] bg-gradient-to-r from-[#ca8b40] to-[#bf7e32] px-5 py-3.5 text-[14px] font-medium text-white shadow-[0_3px_10px_rgba(190,125,50,0.10)] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c98b43] focus-visible:ring-offset-2 lg:text-[16px]"
               >
                 {submitted
                   ? contactSectionContent.submittedLabel

@@ -67,7 +67,7 @@ export default function Facilities() {
           </div>
         </motion.div>
 
-        <div className="flex items-center px-5 py-12 sm:px-10 sm:py-16 lg:px-10 lg:py-16 xl:px-14 2xl:px-20">
+        <div className="flex items-center px-5 py-3 sm:px-10 sm:py-6 lg:px-10 lg:py-6 xl:px-14 2xl:px-20">
           <div className="mx-auto w-full max-w-[720px]">
             <motion.div
               initial={reduceMotion ? false : { opacity: 0, y: 15 }}
@@ -95,7 +95,7 @@ export default function Facilities() {
             <div
               role="tablist"
               aria-label={facilitiesContent.tabListLabel}
-              className="mt-8 flex flex-wrap border-b border-[#e7dfd5] sm:mt-9"
+              className="mt-8 flex flex-wrap border-b border-[#e7dfd5] sm:mt-5"
             >
               {facilitiesContent.items.map((facility, index) => (
                 <button
@@ -133,7 +133,7 @@ export default function Facilities() {
               id="facility-panel"
               role="tabpanel"
               aria-labelledby={`facility-tab-${activeFacility.id}`}
-              className="mt-8 min-h-[130px] sm:mt-9"
+              className="mt-8 min-h-[130px] sm:mt-3"
             >
               <AnimatePresence mode="wait">
                 <motion.div
@@ -147,7 +147,7 @@ export default function Facilities() {
                     {activeFacility.title}
                   </h3>
 
-                  <p className="mt-3 max-w-xl text-[15px] leading-7 text-[#6e5c54] sm:text-base sm:leading-8">
+                  <p className="mt-2 max-w-xl text-[15px] leading-7 text-[#6e5c54] sm:text-base sm:leading-8">
                     {activeFacility.description}
                   </p>
                 </motion.div>
@@ -161,14 +161,14 @@ export default function Facilities() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: reduceMotion ? 0 : 0.55, delay: 0.05 }}
-                className="group relative mt-5 aspect-[2.05/1] overflow-hidden bg-[#f5f0e9] sm:mt-6"
+                className="group relative mt-3 aspect-[1.6/1] overflow-hidden bg-[#f5f0e9] sm:mt-2"
               >
                 <Image
                   src={activeFacility.image}
                   alt={activeFacility.imageAlt}
                   fill
                   sizes="(max-width: 1023px) 100vw, 42vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                  className="transition-transform duration-700 group-hover:scale-[1.035]"
                 />
 
                 <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />

@@ -115,7 +115,7 @@
         "tab": "Spa & Wellness",
         "title": "Spa & Wellness",
         "description": "Restore your mind and body with rejuvenating treatments, calming surroundings and thoughtfully curated wellness experiences.",
-        "image": "/images/home/facilities-spa.webp",
+        "image": "/images/home/house1.webp",
         "imageAlt": "Peaceful luxury spa and wellness retreat",
         "badge": "RENEW YOURSELF"
       },
@@ -124,7 +124,7 @@
         "tab": "Fitness Center",
         "title": "Fitness Center",
         "description": "Stay active during your vacation in our state-of-the-art gym equipped with the latest machines.",
-        "image": "/images/home/about-pool.webp",
+        "image": "/images/home/room1.webp",
         "imageAlt": "Modern luxury hotel gym with premium fitness equipment",
         "badge": "STAY ACTIVE"
       }
@@ -381,9 +381,9 @@
     "heading": "A Stay to Remember",
     "description": "Unwind in a serene setting with panoramic ocean views, elegant design, and thoughtful amenities. Every detail is crafted to make your stay relaxing, comfortable, and truly special.",
     "cta": {
-      "href": "/rooms",
+      "href": "/enquire-now",
       "ariaLabel": "View all rooms and suites",
-      "label": "View All Rooms"
+      "label": "Enquire Now"
     }
   },
   "roomsDetailsBanner": {
@@ -445,6 +445,16 @@
         "name": "Anjali Verma",
         "location": "Delhi, India",
         "review": "Exceptional hospitality and world-class facilities. Aurestia is the perfect blend of luxury and comfort. We can't wait to come back!"
+      },
+      {
+        "name": "Priya Mehta",
+        "location": "Mumbai, India",
+        "review": "Aurestia made our vacation truly special. The rooms were luxurious, the staff was incredibly warm, and every detail was perfect."
+      },
+      {
+        "name": "Rahul Sharma",
+        "location": "Bangalore, India",
+        "review": "An amazing experience from start to finish. The beachfront location, delicious food, and serene atmosphere made our stay unforgettable."
       },
       {
         "name": "Priya Mehta",

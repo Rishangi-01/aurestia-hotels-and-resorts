@@ -100,18 +100,6 @@ export default function AboutUs() {
               );
             })}
           </div>
-
-          <motion.a
-            {...reveal(0.45)}
-            href={aboutUsContent.cta.href}
-            className="group mt-9 inline-flex items-center gap-2 border-b border-[#b18445] pb-2 text-sm font-semibold tracking-wide text-[#8c6537] transition-colors hover:text-[#51351c]"
-          >
-            {aboutUsContent.cta.label}
-            <FiArrowUpRight
-              size={17}
-              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-            />
-          </motion.a>
         </div>
 
         <div className="order-1 grid min-w-0 grid-cols-2 gap-3 sm:gap-4 lg:order-2 lg:gap-4 xl:gap-5">
